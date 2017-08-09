@@ -3,12 +3,18 @@ package com.bignerdranch.android.remindme;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.AutocompleteFilter;
+import com.google.android.gms.location.places.Place;
+
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 
@@ -20,9 +26,6 @@ public class MyMapFragment extends Fragment implements OnMapReadyCallback {
     GoogleMap mGoogleMap;
     MapView mMapView;
     View mView;
-
-    Button searchButton;
-    EditText textField;
 
     public MyMapFragment() {
 
@@ -40,9 +43,12 @@ public class MyMapFragment extends Fragment implements OnMapReadyCallback {
         mView = inflater.inflate(R.layout.map_fragment_view, container, false);
 
 
-        searchButton = (Button) mView.findViewById(R.id.search_button);
-        textField = (EditText)  mView.findViewById(R.id.text_input_field);
-
+//        Fragment fragment = new SearchBarFragment();
+//
+//        FragmentManager fm = getFragmentManager();
+//        FragmentTransaction transaction = fm.beginTransaction();
+//        transaction.replace(R.id.search_fragment, fragment);
+//        transaction.commit();
 
         return mView;
     }

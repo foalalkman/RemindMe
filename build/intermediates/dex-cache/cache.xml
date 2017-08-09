@@ -3,6 +3,42 @@
 
     <item
         is-multidex="true"
+        jar="/Users/per/.android/build-cache/e5636a5747758f07ef5f225c35cb4e327478b207/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d095503f29a8dedc55b9326ed97a5902a1527ab9">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bf5d8672ff84ac031f60831f4a33e7df36795b60/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/0e060697ff1466a27cf11961b738294184d67f13/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="681eeeaec5300e5257ad9bf889c3859ba3833d5a">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_35edc13ad69832bee5a1e41a32aedb662ef21922/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.0.1/e1bb32b12b25e2f78e6786059ca7ea878f8345e0/support-annotations-26.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e1bb32b12b25e2f78e6786059ca7ea878f8345e0">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.0.1_9cc843ba93a411fe106dba8d491bc4f2e424a76f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/7bf665ba377c548f946bb421bd90b3b031072489/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="083e7bc5a9d9404b49b8f34e5091532361fa28e6">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d895c122df35766de6d1fd031b676bab392b23c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -12,12 +48,75 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/per/.android/build-cache/b927e3c0f63f2b41c5d739c777a6c93309ce2993/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e7424f816f538c2acfba6169b25e297ea22afbd8">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_07147c948222bed348124e3c5c67c00066ee3f9a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/351f78d5c5d9f7ba1679dd437df31f48d082e46d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="71af915b7f4f7ec0b5f768b365145bb6a5cb9a66">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8d76dbcaa79b1f74744170393c5cc7d3d4f5af92/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="9d2111a28ff2004207dc96460e506bc0e9072040">
+        sha1="b5ecfecba712879735e41eaa0a6d6065610e13cd">
         <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_94e1087f6e4dc1ac402d8415ce6a8f05614d5d75/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/f204bffea6b169fd0e622a082243a9d1edec010b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="dff4d8f88fe2c0e57306e6981fd9b90caeead7e3">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6243b22a6419973cf0bf701060003fa120bd01db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/494d0b50fd6f725ae8a9e8ba979edc5c90c115c4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e35002351f2d415093a9b564652d4b56be6a0593">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_916d5f093c6eae9b2219fb22b35033e92764cb57/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/776ac682c84f1e09356e674525fc94f5207696b3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="22c673e65215e0764add61e3102946de895439e4">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9f216c3cc860b855a98bb169d935a33c2121726a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/37441c7a838ba9572c25b0afb33181e5c8db2862/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5b495cf2125a79f25e9daf534771e848fe3ead6d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/96ad09b4419f9790e1e6e086305e381286bffad7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a4590fa7eadce322ca893129fdc999074e1aa5bf">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6a704e349294347e86e3094f195692a1665441c0/classes.dex" />
     </item>
 
 </items>

@@ -7,33 +7,23 @@
 
     >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="5dp"
-        >
+    <!--CardView-->
 
-        <EditText
-            android:id="@+id/text_input_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:hint="Search Location Here" />
+    <FrameLayout
+        android:id="@+id/search_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+    <!--android:layout_weight="1"-->
 
 
-        <Button
-            android:id="@+id/search_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:onClick="onMapSearch"
-            android:text="Search" />
-
-
-
-
-    </LinearLayout>
+    <!--<fragment-->
+        <!--android:id="@+id/search_bar_fragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--class="com.bignerdranch.android.remindme.SearchBarFragment"-->
+        <!--/>-->
 
     <com.google.android.gms.maps.MapView
     android:layout_width="wrap_content"
