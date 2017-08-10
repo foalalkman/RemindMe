@@ -1,11 +1,16 @@
 package com.bignerdranch.android.remindme;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,9 +28,11 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 public class NewReminderFragment extends android.support.v4.app.Fragment {
 
     View view;
-    private TextView tempView;
+    private String titleInput = "";
     private static final int PLACE_PICKER_REQUEST = 199;
     private int status;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,9 +44,15 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         view = inflater.inflate(R.layout.new_reminder_fragment_view, container, false);
-        tempView = (TextView) view.findViewById(R.id.temp_text_view);
+
+        launchPlacePicker();
+//        showInputDialog();
 
 
+        return view;
+    }
+
+    private void launchPlacePicker() {
         status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getActivity());
         if (status == ConnectionResult.SUCCESS) {
             PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
@@ -58,13 +71,15 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         } else {
             Toast.makeText(getActivity(), "NOT", Toast.LENGTH_LONG).show();
         }
-
-        return view;
     }
+
+//    private void showInputDialog() {
+//        ReminderAlertDialog inputAlertDialog = new ReminderAlertDialog(getActivity(), "Remind me to: ");
+//        inputAlertDialog.show();
+//    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         if (requestCode == PLACE_PICKER_REQUEST) {
 
             if (resultCode == Activity.RESULT_OK) {
@@ -74,5 +89,11 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
                 Toast.makeText(getActivity(), toastMsg, Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // clean up
     }
 }
