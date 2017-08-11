@@ -28,7 +28,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 public class NewReminderFragment extends android.support.v4.app.Fragment {
 
     View view;
-    private String titleInput = "";
+//    private String titleInput = "";
     private static final int PLACE_PICKER_REQUEST = 199;
     private int status;
 
@@ -44,10 +44,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         view = inflater.inflate(R.layout.new_reminder_fragment_view, container, false);
-
         launchPlacePicker();
-//        showInputDialog();
-
 
         return view;
     }
@@ -73,6 +70,24 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         }
     }
 
+    private void showInputDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        final EditText inputField = new EditText(getContext());
+        inputField.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(inputField);
+        builder.setCancelable(false);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String inputString = inputField.getText().toString();
+                Toast.makeText(getContext(), inputString, Toast.LENGTH_SHORT).show();
+//                launchPlacePicker();
+            }
+        });
+
+        builder.show();
+    }
 //    private void showInputDialog() {
 //        ReminderAlertDialog inputAlertDialog = new ReminderAlertDialog(getActivity(), "Remind me to: ");
 //        inputAlertDialog.show();

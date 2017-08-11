@@ -25,7 +25,7 @@ public class MyListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        view = inflater.inflate(R.layout.new_reminder_fragment_view, container, false);
+        view = inflater.inflate(R.layout.list_fragment_view, container, false);
         tempView = (TextView) view.findViewById(R.id.temp_text_view);
 
         return view;
