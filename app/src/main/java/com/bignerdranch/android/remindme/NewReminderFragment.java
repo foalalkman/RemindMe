@@ -28,8 +28,8 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 public class NewReminderFragment extends android.support.v4.app.Fragment {
 
     View view;
-//    private String titleInput = "";
     private static final int PLACE_PICKER_REQUEST = 199;
+    private String dialogInputString;
     private int status;
 
 
@@ -42,9 +42,9 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+        view = inflater.inflate(R.layout.map_layout_view, container, false);
 
-        view = inflater.inflate(R.layout.new_reminder_fragment_view, container, false);
-        launchPlacePicker();
+        showInputDialog();
 
         return view;
     }
@@ -58,15 +58,12 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
                 startActivityForResult(builder.build(getActivity()), PLACE_PICKER_REQUEST);
 
             } catch (GooglePlayServicesRepairableException e) {
-                Toast.makeText(getActivity(), "exception", Toast.LENGTH_LONG).show();
 
                 e.printStackTrace();
             } catch (GooglePlayServicesNotAvailableException e) {
-                Toast.makeText(getActivity(), "exception", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(getActivity(), "NOT", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -74,24 +71,21 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final EditText inputField = new EditText(getContext());
         inputField.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setTitle(R.string.input_dialog_title);
         builder.setView(inputField);
         builder.setCancelable(false);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                String inputString = inputField.getText().toString();
-                Toast.makeText(getContext(), inputString, Toast.LENGTH_SHORT).show();
-//                launchPlacePicker();
+                dialogInputString = inputField.getText().toString();
+
+                launchPlacePicker();
             }
         });
 
         builder.show();
     }
-//    private void showInputDialog() {
-//        ReminderAlertDialog inputAlertDialog = new ReminderAlertDialog(getActivity(), "Remind me to: ");
-//        inputAlertDialog.show();
-//    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -100,15 +94,49 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
             if (resultCode == Activity.RESULT_OK) {
 
                 Place place = PlacePicker.getPlace(data, getActivity());
-                String toastMsg = String.format("Place: %s", place.getName());
-                Toast.makeText(getActivity(), toastMsg, Toast.LENGTH_LONG).show();
+                showConfirmationDialog(place);
+//                renderUserInput(place);
             }
         }
     }
 
+    private void showConfirmationDialog(Place place) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(buildMessageString(place)).setTitle(R.string.confirmation_dialog_title);
+        builder.setCancelable(false);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                // save data
+            }
+        });
+
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                // reset variables
+                dialogInputString = "";
+            }
+        });
+
+        builder.show();
+    }
+
+    private String buildMessageString(Place place) {
+        String message = String.format("%s at %s", dialogInputString, place.getName());
+        return message;
+    }
+
+
+
     @Override
     public void onDestroy() {
         super.onDestroy();
+
         // clean up
+        dialogInputString = "";
     }
 }
