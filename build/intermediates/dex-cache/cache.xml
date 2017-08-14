@@ -12,12 +12,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/per/.android/build-cache/bd81b1a581c94520682b53f8e1c503cc154e4725/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="5f43d6c042ee8eb48fa7606da4d1034d472a43cd">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0078fb0e1807918b282d0c4371e800a8d61daaa3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="82f6c3e7b95e9033bc5d97e3d913c28358d51d7b">
+        sha1="32688fe819aaff21aabf3bb4980a08a35a07e147">
         <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_94e1087f6e4dc1ac402d8415ce6a8f05614d5d75/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/per/.android/build-cache/507fa1a1550b526ee2ebcfcbf267ff25a0b807e5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="a67e5fbb2dacbe75c0a942e9dfec7a49803b941e">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4f48292a775ac5f5f5f5b8e71ad9f7c8472d3471/classes.dex" />
     </item>
 
 </items>
