@@ -1,5 +1,7 @@
 package com.bignerdranch.android.remindme;
 
+import android.location.Location;
+
 import com.google.android.gms.location.Geofence;
 
 /**
@@ -8,20 +10,31 @@ import com.google.android.gms.location.Geofence;
 
 public class Reminder {
 
-    private Geofence geofence;
+    private Location location;
     private String text;
+    private int radius;
 
-    public Reminder(Geofence g, String t) {
-        geofence = g;
+    public Reminder(Location l, String t, int r) {
+        location = l;
         text = t;
+        radius = r;
     }
 
-    public Geofence getGeofence() {
-        return geofence;
+    public Location getLocation() {
+        return location;
     }
 
     public String getText() {
         return text;
+    }
+
+    public boolean isNear(Location other) {
+        if (this.location.distanceTo(other) < radius) {
+            return true;
+        }
+
+        return false;
+
     }
 
 }

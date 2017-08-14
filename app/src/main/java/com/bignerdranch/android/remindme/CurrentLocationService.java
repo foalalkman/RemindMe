@@ -1,16 +1,19 @@
 package com.bignerdranch.android.remindme;
 
+import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
+
 
 
 /**
@@ -19,8 +22,14 @@ import android.widget.Toast;
 
 public class CurrentLocationService extends Service {
 
+    private LocationServiceCallback callback;
     private MyLocationListener locationListener;
     private LocationManager locationManager;
+    private LocationServiceBinder binder = new LocationServiceBinder();
+
+    public interface LocationServiceCallback {
+        void currentLocationUpdate(Location l);
+    }
 
     @Override
     public void onCreate() {
@@ -30,20 +39,23 @@ public class CurrentLocationService extends Service {
         locationManager = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
 
         //noinspection MissingPermission
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, locationListener);
     }
-
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this, "service starting", Toast.LENGTH_SHORT).show();
+
         return super.onStartCommand(intent,flags,startId);
     }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return binder;
+    }
+
+    public void setCallback(LocationServiceCallback lsc) {
+        callback = lsc;
     }
 
     // clean
@@ -56,20 +68,20 @@ public class CurrentLocationService extends Service {
         }
     }
 
+
     private class MyLocationListener implements LocationListener {
 
         // nu ska vi broadcasta datat vi får genom att lägga det i ett Intent
         @Override
         public void onLocationChanged(Location location) {
             Intent intent = new Intent(AppActivity.LOCATION_UPDATE); // nyckelsträng för att hitta rätt intent
-            intent.putExtra(AppActivity.LOCATION, location.getLongitude() + " " + location.getLatitude()); // skapa locaionobject??
+
+            intent.putExtra(AppActivity.LOCATION, location); // skapa locaionobject??
             sendBroadcast(intent);
         }
 
         @Override
-        public void onProviderEnabled(String s) {
-
-        }
+        public void onProviderEnabled(String s) { }
 
         @Override
         public void onProviderDisabled(String provider) {
@@ -79,7 +91,12 @@ public class CurrentLocationService extends Service {
         }
 
         @Override
-        public void onStatusChanged(String s, int i, Bundle b) {
+        public void onStatusChanged(String s, int i, Bundle b) { }
+    }
+
+    public class LocationServiceBinder extends Binder {
+        CurrentLocationService getService() {
+            return CurrentLocationService.this;
         }
     }
 

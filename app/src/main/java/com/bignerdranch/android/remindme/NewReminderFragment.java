@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.model.LatLng;
 
 /**
  * Created by annika on 2017-08-09.
@@ -27,12 +29,28 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 
 public class NewReminderFragment extends android.support.v4.app.Fragment {
 
-    View view;
+
+    private ReminderCreator reminderCreator;
+
     private static final int PLACE_PICKER_REQUEST = 199;
     private String dialogInputString;
     private int status;
 
+    public interface ReminderCreator {
+        void createReminder(Location l, String s);
+    }
 
+    @Override
+    public void onAttach(Activity a) {
+        super.onAttach(a);
+
+        try {
+            reminderCreator = (ReminderCreator) a;
+
+        } catch (ClassCastException e) {
+            throw new ClassCastException(a.toString() + " does not implement ReminderCreator interface");
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +60,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        view = inflater.inflate(R.layout.map_layout_view, container, false);
+        View view = inflater.inflate(R.layout.map_layout_view, container, false);
 
         showInputDialog();
 
@@ -105,11 +123,16 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         builder.setMessage(buildMessageString(place)).setTitle(R.string.confirmation_dialog_title);
         builder.setCancelable(false);
 
+        final Location location = new Location(place.getName()+"");
+        location.setLatitude(place.getLatLng().latitude);
+        location.setLongitude(place.getLatLng().longitude);
+
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                // save data
+                reminderCreator.createReminder(location, dialogInputString);
+                dialogInputString = "";
             }
         });
 
@@ -136,7 +159,6 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
     public void onDestroy() {
         super.onDestroy();
 
-        // clean up
         dialogInputString = "";
     }
 }

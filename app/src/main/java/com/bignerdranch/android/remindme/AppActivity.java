@@ -1,9 +1,13 @@
 package com.bignerdranch.android.remindme;
 
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.location.Location;
+import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
@@ -20,13 +24,14 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-public class AppActivity extends AppCompatActivity  {
+public class AppActivity extends AppCompatActivity implements NewReminderFragment.ReminderCreator {
 
     public static final String LOCATION_UPDATE = "location update";
     public static final String LOCATION = "location";
-
     private BroadcastReceiver broadcastReceiver;
+
     private int status;
+    private Store store;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,8 @@ public class AppActivity extends AppCompatActivity  {
         setSupportActionBar(myToolbar);
 
         FrameLayout fragmentFrame = (FrameLayout) findViewById(R.id.content_fragment);
+
+        store = new Store();
     }
 
     // registrera broadcastre.
@@ -48,13 +55,7 @@ public class AppActivity extends AppCompatActivity  {
         super.onResume();
 
         if (broadcastReceiver == null) {
-            broadcastReceiver = new BroadcastReceiver() {
-                @Override // when the receiver receives the intent
-                public void onReceive(Context context, Intent intent) {
-
-                    Toast.makeText(AppActivity.this, "update", Toast.LENGTH_SHORT).show();
-                }
-            };
+            broadcastReceiver = new LocationBroadcastReceiver();
         }
 
         registerReceiver(broadcastReceiver, new IntentFilter(LOCATION_UPDATE));
@@ -122,5 +123,24 @@ public class AppActivity extends AppCompatActivity  {
         }
     }
 
+    @Override
+    public void createReminder(Location l, String s) {
+        Reminder newReminder = new Reminder(l, s, 100);
+        store.add(newReminder);
+    }
 
+    public class LocationBroadcastReceiver extends BroadcastReceiver {
+        @Override // when the receiver receives the intent
+        public void onReceive(Context context, Intent intent) {
+
+            Location location = intent.getParcelableExtra(LOCATION);
+
+            if (store.isNear(location)) {
+                Toast.makeText(AppActivity.this, "Near!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(AppActivity.this, "Not near!", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+    }
 }
