@@ -1,0 +1,15 @@
+* Rotation Parcelable
+* Ikoner stretchade
+* Påminnelsevy
+* Pushnotiser
+    - Gruppera
+    - Snooza?
+    
+* Kolla androidversion, permission endast från lvl 23
+
+* kolla om alla place har koordinater, tex en hel gata eller station
+
+* sätta ett utgångsdatum på påminnelser
+
+* vy för att redigera påminnelser
+

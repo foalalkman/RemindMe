@@ -5,12 +5,14 @@
     <item
         android:id="@+id/new_reminder"
         android:orderInCategory="100"
-        android:title="title1"
+        android:icon="@drawable/plus_icon_darkblue"
+        android:title="New reminder"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/list_reminders"
         android:orderInCategory="100"
-        android:title="title2"
+        android:icon="@drawable/list_icon_darkblue"
+        android:title="My reminders"
         app:showAsAction="ifRoom" />
 </menu>

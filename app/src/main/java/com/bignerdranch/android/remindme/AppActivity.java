@@ -25,8 +25,12 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
     public static final String LOCATION_UPDATE = "location update";
     public static final String LOCATION = "location";
+    public static final String KEY_STORE = "store";
+    public static final String KEY_REMINDERS = "reminders";
+    public static final String KEY_CURRENT_FRAGMENT = "current fragment";
 
     private BroadcastReceiver broadcastReceiver;
+    private Fragment currentFragment;
 
     private int status;
     private Store store;
@@ -43,8 +47,31 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
         setSupportActionBar(myToolbar);
 
         FrameLayout fragmentFrame = (FrameLayout) findViewById(R.id.content_fragment);
+        initialixeState(savedInstanceState);
 
-        store = new Store();
+    }
+
+    private void initialixeState(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            store = savedInstanceState.getParcelable(KEY_STORE);
+            currentFragment =  getSupportFragmentManager().getFragment(savedInstanceState, KEY_CURRENT_FRAGMENT);
+            if (currentFragment != null) {
+                launchListFragment();
+            }
+
+        } else {
+            store = new Store();
+        }
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putParcelable(KEY_STORE, store);
+        getSupportFragmentManager().putFragment(savedInstanceState, KEY_CURRENT_FRAGMENT, currentFragment);
+
     }
 
     // registrera broadcastre.
@@ -84,26 +111,41 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
         if (id == R.id.new_reminder) {
 
-            Fragment fragment = new NewReminderFragment();
-
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            transaction.replace(R.id.content_fragment, fragment);
-            transaction.commit();
+            launchNewReminderFragment();
             return true;
         }
 
         if (id == R.id.list_reminders) {
-            Fragment fragment = new MyListFragment();
-
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction transaction = fm.beginTransaction();
-            transaction.replace(R.id.content_fragment, fragment);
-            transaction.commit();
+            launchListFragment();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void launchNewReminderFragment() {
+        Fragment fragment = new NewReminderFragment();
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.content_fragment, fragment);
+        transaction.commit();
+
+        currentFragment = fragment;
+    }
+
+    private void launchListFragment() {
+        Fragment fragment = new MyListFragment();
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        //
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList(KEY_REMINDERS, store.getReminders());
+        fragment.setArguments(bundle);
+        //
+        transaction.replace(R.id.content_fragment, fragment);
+        transaction.commit();
+        currentFragment = fragment;
     }
 
     @Override
@@ -122,9 +164,16 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
     }
 
     @Override
-    public void createReminder(Location l, String s) {
-        Reminder newReminder = new Reminder(l, s, Store.MAX_DISTANCE);
-        store.add(newReminder);
+    public void createReminder(Location l, String n, String s) {
+
+        Reminder newReminder = new Reminder(l, n, s, Store.MAX_DISTANCE);
+        if (store != null) {
+            Toast.makeText(AppActivity.this, "Store is NOT null", Toast.LENGTH_SHORT);
+
+            store.add(newReminder);
+        } else {
+            Toast.makeText(AppActivity.this, "Store is null", Toast.LENGTH_SHORT);
+        }
     }
 
     public class LocationBroadcastReceiver extends BroadcastReceiver {

@@ -4,8 +4,6 @@ import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.android.gms.location.Geofence;
-
 /**
  * Created by annika on 2017-08-14.
  */
@@ -13,11 +11,13 @@ import com.google.android.gms.location.Geofence;
 public class Reminder implements Parcelable {
 
     private Location location;
+    private String locationName;
     private String text;
     private int radius;
 
-    public Reminder(Location l, String t, int r) {
+    public Reminder(Location l, String ln, String t, int r) {
         location = l;
+        locationName = ln;
         text = t;
         radius = r;
     }
@@ -25,6 +25,8 @@ public class Reminder implements Parcelable {
     public Location getLocation() {
         return location;
     }
+
+    public String getLocationName() { return locationName; }
 
     public String getText() {
         return text;
@@ -46,8 +48,9 @@ public class Reminder implements Parcelable {
      */
     private Reminder(Parcel in) {
         location = Location.CREATOR.createFromParcel(in);
-        text = in.readString();
         radius = in.readInt();
+        text = in.readString();
+        locationName = in.readString();
     }
 
     /**
@@ -69,6 +72,7 @@ public class Reminder implements Parcelable {
         location.writeToParcel(parcel, i);
         parcel.writeInt(radius);
         parcel.writeString(text);
+        parcel.writeString(locationName);
     }
 
     /**

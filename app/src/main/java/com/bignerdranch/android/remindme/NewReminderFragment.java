@@ -2,6 +2,7 @@ package com.bignerdranch.android.remindme;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
@@ -37,7 +38,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
     private int status;
 
     public interface ReminderCreator {
-        void createReminder(Location l, String s);
+        void createReminder(Location l, String n, String s);
     }
 
     @Override
@@ -83,8 +84,6 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
             } catch (GooglePlayServicesNotAvailableException e) {
                 e.printStackTrace();
             }
-        } else {
-            Toast.makeText(getContext(), "whattafack " + status , Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -102,6 +101,13 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
                 dialogInputString = inputField.getText().toString();
 
                 launchPlacePicker();
+            }
+        });
+
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+//                getActivity().getFragmentManager().popBackStack();
             }
         });
 
@@ -126,6 +132,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         builder.setMessage(buildMessageString(place)).setTitle(R.string.confirmation_dialog_title);
         builder.setCancelable(false);
 
+        final String name = (String)place.getName();
         final Location location = new Location(place.getName()+"");
         location.setLatitude(place.getLatLng().latitude);
         location.setLongitude(place.getLatLng().longitude);
@@ -134,7 +141,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                reminderCreator.createReminder(location, dialogInputString);
+                reminderCreator.createReminder(location, name, dialogInputString);
                 dialogInputString = "";
             }
         });
@@ -145,6 +152,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
 
                 // reset variables
                 dialogInputString = "";
+//                getActivity().getFragmentManager().popBackStack();
             }
         });
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="En massa info om en massa saker hejoch hå"
+        android:id="@+id/reminder_title_view"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Denna plats"
+        android:id="@+id/reminder_location_view"
+        android:layout_below="@id/reminder_title_view"
+
+        />
+
+
+    <ImageButton
+        android:id="@+id/options_menu_bottom"
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/options_grey_24"
+
+        android:layout_alignParentRight="true"
+
+        />
+
+</RelativeLayout>
