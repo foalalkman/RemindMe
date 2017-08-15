@@ -1,6 +1,8 @@
 package com.bignerdranch.android.remindme;
 
 import android.location.Location;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.util.ArrayList;
 
@@ -8,7 +10,7 @@ import java.util.ArrayList;
  * Created by annika on 2017-08-14.
  */
 
-public class Store {
+public class Store implements Parcelable {
 
     private ArrayList<Reminder> reminders;
     public static final int MAX_DISTANCE = 50;
@@ -16,6 +18,10 @@ public class Store {
     public Store() {
         reminders = new ArrayList<>();
         testReminders();
+    }
+
+    private Store(Parcel in) {
+        in.readTypedList(reminders, null);
     }
 
     public Reminder add(Reminder r) {
@@ -51,4 +57,26 @@ public class Store {
         l2.setLatitude(18.108195);
         reminders.add(new Reminder(l2, "tv[an", MAX_DISTANCE));
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeTypedList(reminders);
+    }
+
+    public final Parcelable.Creator<Store> CREATOR = new Parcelable.Creator<Store>() {
+        @Override
+        public Store createFromParcel(Parcel source) {
+            return new Store(source);
+        }
+
+        @Override
+        public Store[] newArray(int size) {
+            return new Store[size];
+        }
+    };
 }

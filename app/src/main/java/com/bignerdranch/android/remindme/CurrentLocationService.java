@@ -48,7 +48,7 @@ public class CurrentLocationService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-    
+
     // clean
     @Override
     public void onDestroy() {

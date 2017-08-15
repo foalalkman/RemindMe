@@ -15,6 +15,7 @@ public class MyListFragment extends Fragment {
 
     View view;
     private TextView tempView;
+    private static final String KEY_REMINDERS_LIST = "list of reminders";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
