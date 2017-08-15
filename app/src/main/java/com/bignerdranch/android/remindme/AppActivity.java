@@ -1,13 +1,10 @@
 package com.bignerdranch.android.remindme;
 
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.ServiceConnection;
 import android.location.Location;
-import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
@@ -28,6 +25,7 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
     public static final String LOCATION_UPDATE = "location update";
     public static final String LOCATION = "location";
+
     private BroadcastReceiver broadcastReceiver;
 
     private int status;
@@ -125,7 +123,7 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
     @Override
     public void createReminder(Location l, String s) {
-        Reminder newReminder = new Reminder(l, s, 100);
+        Reminder newReminder = new Reminder(l, s, Store.MAX_DISTANCE);
         store.add(newReminder);
     }
 

@@ -22,14 +22,9 @@ import android.widget.Toast;
 
 public class CurrentLocationService extends Service {
 
-    private LocationServiceCallback callback;
     private MyLocationListener locationListener;
     private LocationManager locationManager;
     private LocationServiceBinder binder = new LocationServiceBinder();
-
-    public interface LocationServiceCallback {
-        void currentLocationUpdate(Location l);
-    }
 
     @Override
     public void onCreate() {
@@ -51,13 +46,9 @@ public class CurrentLocationService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return binder;
+        return null;
     }
-
-    public void setCallback(LocationServiceCallback lsc) {
-        callback = lsc;
-    }
-
+    
     // clean
     @Override
     public void onDestroy() {

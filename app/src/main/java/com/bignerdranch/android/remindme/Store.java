@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Store {
 
     private ArrayList<Reminder> reminders;
+    public static final int MAX_DISTANCE = 50;
 
     public Store() {
         reminders = new ArrayList<>();
@@ -41,13 +42,13 @@ public class Store {
 
     private void testReminders() {
         Location l1 = new Location("");
-        l1.setLongitude(11.1);
-        l1.setLatitude(11.1);
-        reminders.add(new Reminder(l1, "ettan", 100));
+        l1.setLongitude(59.345502);
+        l1.setLatitude(18.111529);
+        reminders.add(new Reminder(l1, "ettan", MAX_DISTANCE));
 
         Location l2 = new Location("");
-        l2.setLongitude(22.2);
-        l2.setLatitude(22.2);
-        reminders.add(new Reminder(l2, "tv[an", 100));
+        l2.setLongitude(59.344616);
+        l2.setLatitude(18.108195);
+        reminders.add(new Reminder(l2, "tv[an", MAX_DISTANCE));
     }
 }

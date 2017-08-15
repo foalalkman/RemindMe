@@ -68,7 +68,9 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
     }
 
     private void launchPlacePicker() {
+
         status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getActivity());
+
         if (status == ConnectionResult.SUCCESS) {
             PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
@@ -82,6 +84,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
                 e.printStackTrace();
             }
         } else {
+            Toast.makeText(getContext(), "whattafack " + status , Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -152,8 +155,6 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
         String message = String.format("%s at %s", dialogInputString, place.getName());
         return message;
     }
-
-
 
     @Override
     public void onDestroy() {
