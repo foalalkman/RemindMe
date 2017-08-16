@@ -25,15 +25,14 @@
 
         />
 
-
     <ImageButton
         android:id="@+id/options_menu_bottom"
         android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/options_grey_24"
-
         android:layout_alignParentRight="true"
+
 
         />
 
