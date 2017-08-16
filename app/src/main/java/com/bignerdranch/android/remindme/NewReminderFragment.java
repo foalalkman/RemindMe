@@ -33,7 +33,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
 
     private ReminderCreator reminderCreator;
 
-    private static final int PLACE_PICKER_REQUEST = 199;
+    public static final int PLACE_PICKER_REQUEST = 199;
     private String dialogInputString;
     private int status;
 

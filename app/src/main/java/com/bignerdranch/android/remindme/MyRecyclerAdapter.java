@@ -31,7 +31,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
     }
 
     public interface UserInputDelegate {
-        void pickNewPlace();
+        void pickNewPlace(ReminderHolder holder);
         void editText(ReminderHolder r);
     }
 
@@ -54,12 +54,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         // holder update
     }
 
-    void updateReminderViews() {
-        for (Reminder r : dataset) {
-            notifyItemChanged(dataset.indexOf(r));
-        }
-    }
-
     private void setButtonListener(ReminderHolder holder) {
         final Context c = this.context;
         final ReminderHolder reminderHolder = holder;
@@ -77,7 +71,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
                         switch (item.getItemId()) {
 
                             case R.id.options_menu_edit_location:
-
+                                delegate.pickNewPlace(reminderHolder);
                                 break;
 
                             case R.id.options_menu_edit_text:

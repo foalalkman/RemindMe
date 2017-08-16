@@ -1,7 +1,10 @@
 package com.bignerdranch.android.remindme;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,7 +16,12 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 
 import java.util.ArrayList;
 
@@ -29,16 +37,81 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
     private MyRecyclerAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private String newText = "";
+    private MyRecyclerAdapter.ReminderHolder currentReminderHolder;
 
 
     @Override
-    public void pickNewPlace() {
-        Toast.makeText(getContext(), "Pickplace", Toast.LENGTH_SHORT);
+    public void pickNewPlace(MyRecyclerAdapter.ReminderHolder holder) {
+        currentReminderHolder = holder;
+        int status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getActivity());
+
+        if (status == ConnectionResult.SUCCESS) {
+            PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+            try {
+                startActivityForResult(builder.build(getActivity()), NewReminderFragment.PLACE_PICKER_REQUEST);
+
+            } catch (GooglePlayServicesRepairableException e) {
+
+                e.printStackTrace();
+            } catch (GooglePlayServicesNotAvailableException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == NewReminderFragment.PLACE_PICKER_REQUEST) {
+
+            if (resultCode == Activity.RESULT_OK) {
+
+                Place place = PlacePicker.getPlace(data, getActivity());
+                showConfirmationDialog(place);
+            }
+        }
+    }
+
+    private void showConfirmationDialog(Place place) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.confirmation_dialog_new_place);
+
+        builder.setCancelable(false);
+
+        final String name = (String)place.getName();
+        final Location location = new Location(place.getName()+"");
+        location.setLatitude(place.getLatLng().latitude);
+        location.setLongitude(place.getLatLng().longitude);
+
+        builder.setMessage("Change location to " + name + "?");
+
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                currentReminderHolder.reminder.setLocationName(name);
+                currentReminderHolder.reminder.setLocation(location);
+
+                // updates
+
+                currentReminderHolder = null;
+            }
+        });
+
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                currentReminderHolder = null;
+            }
+        });
+
+        builder.show();
+    }
+
+
+
+    @Override
     public void editText(MyRecyclerAdapter.ReminderHolder holder) {
-        Toast.makeText(getContext(), "EditText", Toast.LENGTH_SHORT);
 
         final MyRecyclerAdapter.ReminderHolder currentHolder = holder;
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
