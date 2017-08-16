@@ -4,5 +4,7 @@
     <string name="API_key">AIzaSyAZFat-h8LN0ypAgbDOrxGEmdMI98CaaMc</string>
 
     <string name="input_dialog_title">Remind me to:</string>
+    <string name="input_dialog_new_title">New reminder:</string>
+
     <string name="confirmation_dialog_title">Create reminder</string>
 </resources>

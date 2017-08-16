@@ -9,7 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.android.gms.location.places.Place;
 
 import java.util.ArrayList;
 
@@ -17,15 +18,22 @@ import java.util.ArrayList;
  * Created by annika on 2017-08-16.
  */
 
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ReminderHolder> {
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ReminderHolder>
+{
     private ArrayList<Reminder> dataset;
     private Context context;
+    private UserInputDelegate delegate;
 
-    public MyRecyclerAdapter(ArrayList<Reminder> reminders, Context c) {
+    public MyRecyclerAdapter(ArrayList<Reminder> reminders, Context c, UserInputDelegate d) {
         dataset = reminders;
         context = c;
+        delegate = d;
     }
 
+    public interface UserInputDelegate {
+        void pickNewPlace();
+        void editText(ReminderHolder r);
+    }
 
     @Override
     public ReminderHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,19 +49,28 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         holder.titleView.setText(reminder.getText());
         holder.locationView.setText(reminder.getLocationName());
         setButtonListener(holder);
+        holder.position = position;
 
         // holder update
+    }
+
+    void updateReminderViews() {
+        for (Reminder r : dataset) {
+            notifyItemChanged(dataset.indexOf(r));
+        }
     }
 
     private void setButtonListener(ReminderHolder holder) {
         final Context c = this.context;
         final ReminderHolder reminderHolder = holder;
+        final ArrayList<Reminder> reminderArrayList = dataset;
 
         holder.optionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopupMenu popupMenu = new PopupMenu(c, reminderHolder.optionsButton);
                 popupMenu.inflate(R.menu.reminder_options_menu);
+
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
@@ -61,17 +78,17 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
 
                             case R.id.options_menu_edit_location:
 
-                                //
                                 break;
+
                             case R.id.options_menu_edit_text:
+                                delegate.editText(reminderHolder);
 
-
-                                //
+                                notifyItemChanged(reminderHolder.position);
                                 break;
+
                             case R.id.options_menu_delete:
-
-
-                                //
+                                reminderArrayList.remove(reminderHolder.reminder);
+                                notifyDataSetChanged();
                                 break;
                         }
                         return false;
@@ -95,6 +112,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         TextView locationView;
         ImageButton optionsButton;
         Reminder reminder;
+        int position;
 
         public ReminderHolder(View view) {
             super(view);

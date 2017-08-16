@@ -4,7 +4,7 @@
 * Pushnotiser
     - Gruppera
     - Snooza?
-    
+
 * Kolla androidversion, permission endast från lvl 23
 
 * kolla om alla place har koordinater, tex en hel gata eller station
@@ -13,3 +13,4 @@
 
 * vy för att redigera påminnelser
 
+* uppdatera recyclerviewn
