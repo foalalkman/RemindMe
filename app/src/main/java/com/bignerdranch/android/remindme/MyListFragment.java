@@ -33,7 +33,6 @@ public class MyListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         Bundle bundle = getArguments();
         reminders = bundle.getParcelableArrayList(AppActivity.KEY_REMINDERS);
     }
@@ -41,9 +40,7 @@ public class MyListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-
         view = inflater.inflate(R.layout.list_fragment_view, container, false);
-
         initializeRecyclerView(view);
 
         return view;
@@ -54,7 +51,7 @@ public class MyListFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new MyRecyclerAdapter(reminders);
+        adapter = new MyRecyclerAdapter(reminders, getContext());
         recyclerView.setAdapter(adapter);
     }
 
@@ -73,5 +70,5 @@ public class MyListFragment extends Fragment {
             reminders = savedInstanceState.getParcelableArrayList(AppActivity.KEY_REMINDERS);
         }
     }
-    
+
 }
