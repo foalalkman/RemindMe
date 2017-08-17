@@ -138,7 +138,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                reminderCreator.createReminder(location, dialogInputString, name);
+                reminderCreator.createReminder(location,dialogInputString, name);
                 dialogInputString = "";
             }
         });

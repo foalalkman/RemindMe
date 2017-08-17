@@ -1,5 +1,8 @@
 package com.bignerdranch.android.remindme;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +12,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -29,8 +34,11 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
     public static final String KEY_REMINDERS = "reminders";
     public static final String KEY_CURRENT_FRAGMENT = "current fragment";
 
+    private static final int NOTIFICATION_ID = 321123;
+
     private BroadcastReceiver broadcastReceiver;
     private Fragment currentFragment;
+    private FragmentManager fragmentManager;
 
     private int status;
     private Store store;
@@ -42,6 +50,8 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
         Intent service = new Intent(this, CurrentLocationService.class);
         startService(service);
+
+        fragmentManager = getSupportFragmentManager();
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -61,6 +71,7 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
         } else {
             store = new Store();
+            currentFragment = new MyListFragment();
         }
     }
 
@@ -126,8 +137,7 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
     private void launchNewReminderFragment() {
         Fragment fragment = new NewReminderFragment();
 
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.content_fragment, fragment);
         transaction.commit();
 
@@ -136,8 +146,7 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
     private void launchListFragment() {
         Fragment fragment = new MyListFragment();
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
         //
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList(KEY_REMINDERS, store.getReminders());
@@ -182,10 +191,54 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
             if (index >= 0) {
                 Reminder reminder = store.getIndex(index);
-                Toast.makeText(AppActivity.this, "Near " + reminder.getLocationName(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(AppActivity.this, "Near " + reminder.getLocationName(), Toast.LENGTH_SHORT).show();
+                createNotification();
             } else {
                 Toast.makeText(AppActivity.this, "Not near!", Toast.LENGTH_SHORT).show();
             }
+
+        }
+
+        private void createNotification() {
+            NotificationCompat.Builder notificationBuilder =
+                    new NotificationCompat.Builder(AppActivity.this)
+                        .setSmallIcon(R.drawable.remindme_icon)
+                        .setAutoCancel(true)
+                        .setTicker("Tkcner")
+                        .setWhen(System.currentTimeMillis())
+                        .setContentTitle("My notification")
+                        .setContentText("Hello world1")
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .setPriority(Notification.PRIORITY_MAX);
+
+
+            Intent resultIntent = new Intent(AppActivity.this, AppActivity.class);
+
+            PendingIntent pendingIntent =
+                    PendingIntent.getActivity(AppActivity.this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            notificationBuilder.setContentIntent(pendingIntent);
+
+            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            nm.notify(NOTIFICATION_ID, notificationBuilder.build());
+
+
+//            TaskStackBuilder stackBuilder = TaskStackBuilder.create(AppActivity.this);
+//            stackBuilder.addParentStack(AppActivity.class);
+//            stackBuilder.addNextIntent(resultIntent);
+//
+//            PendingIntent resultPendingIntent =
+//                    stackBuilder.getPendingIntent(
+//                            0,
+//                            PendingIntent.FLAG_CANCEL_CURRENT
+//                    );
+//
+//
+//            notificationBuilder.setContentIntent(resultPendingIntent);
+//            NotificationManager notificationManager =
+//                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//            notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
+
 
         }
     }
