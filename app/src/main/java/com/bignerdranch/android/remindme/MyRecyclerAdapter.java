@@ -116,7 +116,4 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
             optionsButton = (ImageButton) view.findViewById(R.id.options_menu_button);
         }
     }
-
-
-
 }

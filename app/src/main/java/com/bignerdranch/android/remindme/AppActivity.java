@@ -164,15 +164,11 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
     }
 
     @Override
-    public void createReminder(Location l, String n, String s) {
+    public void createReminder(Location l, String s, String n) {
 
-        Reminder newReminder = new Reminder(l, n, s, Store.MAX_DISTANCE);
+        Reminder newReminder = new Reminder(l, s, n, Store.MAX_DISTANCE);
         if (store != null) {
-            Toast.makeText(AppActivity.this, "Store is NOT null", Toast.LENGTH_SHORT);
-
             store.add(newReminder);
-        } else {
-            Toast.makeText(AppActivity.this, "Store is null", Toast.LENGTH_SHORT);
         }
     }
 
@@ -182,8 +178,11 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
             Location location = intent.getParcelableExtra(LOCATION);
 
-            if (store.isNear(location)) {
-                Toast.makeText(AppActivity.this, "Near!", Toast.LENGTH_SHORT).show();
+            int index = store.isNear(location);
+
+            if (index >= 0) {
+                Reminder reminder = store.getIndex(index);
+                Toast.makeText(AppActivity.this, "Near " + reminder.getLocationName(), Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(AppActivity.this, "Not near!", Toast.LENGTH_SHORT).show();
             }

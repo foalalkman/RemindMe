@@ -11,6 +11,15 @@
         <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e2b9c664f45928975755eaa8d18e8491a3a2d182/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/per/.android/build-cache/7f7884c1ad2af7f387cfbe6de449f60428c8c40a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/pre-dexed/debug/classes_f3c3eec8f88cc98d018e56caf9966fa4d288b1a0.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
@@ -18,6 +27,15 @@
         revision="26.0.0"
         sha1="e069282aa0e2d232f91c22047dbdfbb06364d423">
         <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_94e1087f6e4dc1ac402d8415ce6a8f05614d5d75/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/per/.android/build-cache/71d5a570653e5fbc21ba5efb3baa253ed31f3a65/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="/Users/per/AndroidStudioProjects/RemindMe/app/build/intermediates/pre-dexed/debug/classes_fc399c8b9158c319537225351ce4e618288bcd4d.jar" />
     </item>
 
 </items>

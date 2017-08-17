@@ -2,7 +2,6 @@ package com.bignerdranch.android.remindme;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
@@ -11,9 +10,7 @@ import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -122,7 +119,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
 
                 Place place = PlacePicker.getPlace(data, getActivity());
                 showConfirmationDialog(place);
-//                renderUserInput(place);
+//
             }
         }
     }
@@ -141,7 +138,7 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                reminderCreator.createReminder(location, name, dialogInputString);
+                reminderCreator.createReminder(location, dialogInputString, name);
                 dialogInputString = "";
             }
         });
@@ -152,7 +149,6 @@ public class NewReminderFragment extends android.support.v4.app.Fragment {
 
                 // reset variables
                 dialogInputString = "";
-//                getActivity().getFragmentManager().popBackStack();
             }
         });
 

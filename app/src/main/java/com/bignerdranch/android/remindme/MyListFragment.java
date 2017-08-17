@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -93,7 +92,6 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
                 currentReminderHolder.reminder.setLocation(location);
 
                 // updates
-
                 currentReminderHolder = null;
             }
         });
@@ -107,7 +105,6 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
 
         builder.show();
     }
-
 
 
     @Override
@@ -126,7 +123,7 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
             public void onClick(DialogInterface dialogInterface, int i) {
                 newText = inputField.getText().toString();
                 currentHolder.reminder.setText(newText);
-
+                // update
             }
         });
 
@@ -161,20 +158,8 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
-
-//        DefaultItemAnimator animator = new DefaultItemAnimator() {
-//            @Override
-//            public boolean canReuseUpdatedViewHolder(MyRecyclerAdapter.ReminderHolder viewHolder) {
-//
-//                return true;
-//            }
-//        };
-//        recyclerView.setItemAnimator(animator);
-
         adapter = new MyRecyclerAdapter(reminders, getContext(), (MyRecyclerAdapter.UserInputDelegate) this);
         recyclerView.setAdapter(adapter);
-
-
     }
 
     @Override
@@ -191,6 +176,13 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
         if (savedInstanceState != null) {
             reminders = savedInstanceState.getParcelableArrayList(AppActivity.KEY_REMINDERS);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        currentReminderHolder = null;
     }
 
 }

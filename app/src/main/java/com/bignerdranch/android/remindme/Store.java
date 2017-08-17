@@ -38,22 +38,25 @@ public class Store implements Parcelable {
         return reminders;
     }
 
-    public boolean isNear(Location location) {
+    public Reminder getIndex(int i) {
+        return reminders.get(i);
+    }
+
+    public int isNear(Location location) {
 
         for (Reminder reminder : reminders) {
             if (reminder.isNear(location)) {
-                return true;
+                return reminders.indexOf(reminder);
             }
         }
 
-        return false;
+        return -1;
     }
-
 
     private void testReminders() {
         Location l1 = new Location("");
-        l1.setLongitude(59.345521);
-        l1.setLatitude(18.111632);
+        l1.setLongitude(59.345615);
+        l1.setLatitude(18.111754);
         reminders.add(new Reminder(l1, "Diska", "Öregrundsgatan 11", MAX_DISTANCE));
 
         Location l2 = new Location("");
