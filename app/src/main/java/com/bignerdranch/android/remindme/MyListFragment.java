@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * Created by annika on 2017-08-09.
  */
 
-public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserInputDelegate {
+public class MyListFragment extends ReceiverControllerFragment implements MyRecyclerAdapter.UserInputDelegate {
 
     ArrayList<Reminder> reminders;
     View view;
@@ -37,13 +37,6 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
     private RecyclerView.LayoutManager layoutManager;
     private String newText = "";
     private MyRecyclerAdapter.ReminderHolder currentReminderHolder;
-    private ReceiverController receiverController;
-
-
-    public interface ReceiverController {
-        void datasetChanged();
-    }
-
 
     @Override
     public void pickNewPlace(MyRecyclerAdapter.ReminderHolder holder) {
@@ -145,19 +138,7 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
 
     @Override
     public void notifyActivity() {
-        receiverController.datasetChanged();
-    }
-
-    @Override
-    public void onAttach(Activity a) {
-        super.onAttach(a);
-
-        try {
-            receiverController = (MyListFragment.ReceiverController) a;
-
-        } catch (ClassCastException e) {
-            throw new ClassCastException(a.toString() + " does not implement ReceiverController interface");
-        }
+        receiverController.onUpdateStore();
     }
 
     @Override

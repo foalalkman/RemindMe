@@ -164,7 +164,13 @@ public class AppActivity extends AppCompatActivity
             store.add(newReminder);
 
             if (serviceHasStopped(CurrentLocationService.class)) {
+                Toast.makeText(AppActivity.this, "Service stopped, start it", Toast.LENGTH_SHORT).show();
                 startService(locationService);
+            }
+            if (serviceHasStopped(CurrentLocationService.class)) {
+                Toast.makeText(AppActivity.this, "Service still stopped", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(AppActivity.this, "Service running", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -174,11 +180,11 @@ public class AppActivity extends AppCompatActivity
 
         for (ActivityManager.RunningServiceInfo serviceInfo : activityMaager.getRunningServices(Integer.MAX_VALUE)) {
             if (serviceClass.getName().equals(serviceInfo.service.getClassName())) {
-                Toast.makeText(AppActivity.this, "Service is running", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(AppActivity.this, "Service is running", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
-        Toast.makeText(AppActivity.this, "Service has stopped", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(AppActivity.this, "Service has stopped", Toast.LENGTH_SHORT).show();
         return true;
     }
 
@@ -187,13 +193,6 @@ public class AppActivity extends AppCompatActivity
             store.remove(index);
         }
     }
-
-//    private void locationServiceUpdate() {
-//        if (store.isEmpty()) {
-//            stopService(locationService);
-//            Toast.makeText(AppActivity.this, "Store is empty", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 
     private void createNotification(String message) {
 
@@ -209,8 +208,12 @@ public class AppActivity extends AppCompatActivity
                         .setPriority(Notification.PRIORITY_MAX)
                 ;
 
+        Notification notification = notificationBuilder.mNotification;
+        notification.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
 
         Intent resultIntent = new Intent(AppActivity.this, AppActivity.class);
+        resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
 
         PendingIntent pendingIntent =
                 PendingIntent.getActivity(AppActivity.this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -222,10 +225,15 @@ public class AppActivity extends AppCompatActivity
     }
 
     @Override
-    public void datasetChanged() {
+    public void onUpdateStore() {
         if (store.isEmpty()) {
             stopService(locationService);
             Toast.makeText(AppActivity.this, "Store is empty", Toast.LENGTH_SHORT).show();
+        } else {
+
+            if (serviceHasStopped(CurrentLocationService.class)) {
+                startService(locationService);
+            }
         }
     }
 
@@ -237,10 +245,11 @@ public class AppActivity extends AppCompatActivity
             int index = store.isNear(location);
 
             if (index >= 0) {
+                Toast.makeText(AppActivity.this, "Near!", Toast.LENGTH_SHORT).show();
                 Reminder reminder = store.getIndex(index);
                 createNotification(reminder.getText());
                 removeReminder(index);
-                datasetChanged();
+                onUpdateStore();
 
             } else {
                 Toast.makeText(AppActivity.this, "Not near!", Toast.LENGTH_SHORT).show();
