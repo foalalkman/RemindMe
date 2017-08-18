@@ -1,6 +1,5 @@
 package com.bignerdranch.android.remindme;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -24,7 +23,6 @@ public class CurrentLocationService extends Service {
 
     private MyLocationListener locationListener;
     private LocationManager locationManager;
-    private LocationServiceBinder binder = new LocationServiceBinder();
 
     @Override
     public void onCreate() {
@@ -39,7 +37,6 @@ public class CurrentLocationService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
         return super.onStartCommand(intent,flags,startId);
     }
 
@@ -67,7 +64,9 @@ public class CurrentLocationService extends Service {
         public void onLocationChanged(Location location) {
             Intent intent = new Intent(AppActivity.LOCATION_UPDATE); // nyckelsträng för att hitta rätt intent
 
-            intent.putExtra(AppActivity.LOCATION, location); // skapa locaionobject??
+
+
+            intent.putExtra(AppActivity.LOCATION, location);
             sendBroadcast(intent);
         }
 
@@ -84,11 +83,4 @@ public class CurrentLocationService extends Service {
         @Override
         public void onStatusChanged(String s, int i, Bundle b) { }
     }
-
-    public class LocationServiceBinder extends Binder {
-        CurrentLocationService getService() {
-            return CurrentLocationService.this;
-        }
-    }
-
 }

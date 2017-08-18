@@ -53,6 +53,14 @@ public class Store implements Parcelable {
         return -1;
     }
 
+    public boolean isEmpty() {
+        return reminders.isEmpty();
+    }
+
+    public void remove(int index) {
+        reminders.remove(index);
+    }
+
     private void testReminders() {
         Location l1 = new Location("");
         l1.setLongitude(59.345615);

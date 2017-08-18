@@ -1,5 +1,6 @@
 package com.bignerdranch.android.remindme;
 
+import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,7 +14,6 @@ import android.support.v4.app.FragmentManager;
 
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,11 +22,8 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-
-public class AppActivity extends AppCompatActivity implements NewReminderFragment.ReminderCreator {
+public class AppActivity extends AppCompatActivity
+        implements NewReminderFragment.ReminderCreator, MyListFragment.ReceiverController {
 
     public static final String LOCATION_UPDATE = "location update";
     public static final String LOCATION = "location";
@@ -36,11 +33,11 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
     private static final int NOTIFICATION_ID = 321123;
 
+    Intent locationService;
+
     private BroadcastReceiver broadcastReceiver;
     private Fragment currentFragment;
     private FragmentManager fragmentManager;
-
-    private int status;
     private Store store;
 
     @Override
@@ -48,8 +45,7 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_activity_view);
 
-        Intent service = new Intent(this, CurrentLocationService.class);
-        startService(service);
+        locationService = new Intent(this, CurrentLocationService.class);
 
         fragmentManager = getSupportFragmentManager();
 
@@ -57,11 +53,11 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
         setSupportActionBar(myToolbar);
 
         FrameLayout fragmentFrame = (FrameLayout) findViewById(R.id.content_fragment);
-        initialixeState(savedInstanceState);
+        initializeState(savedInstanceState);
 
     }
 
-    private void initialixeState(Bundle savedInstanceState) {
+    private void initializeState(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             store = savedInstanceState.getParcelable(KEY_STORE);
             currentFragment =  getSupportFragmentManager().getFragment(savedInstanceState, KEY_CURRENT_FRAGMENT);
@@ -97,16 +93,6 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
         registerReceiver(broadcastReceiver, new IntentFilter(LOCATION_UPDATE));
     }
 
-    private void checkGooglePlayServicesAvailability() {
-        status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
-        if (status != ConnectionResult.SUCCESS) {
-            if (GooglePlayServicesUtil.isUserRecoverableError(status)) {
-                GooglePlayServicesUtil.getErrorDialog(status, AppActivity.this,
-                        100).show();
-            }
-        }
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
@@ -121,7 +107,6 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
         int id = item.getItemId();
 
         if (id == R.id.new_reminder) {
-
             launchNewReminderFragment();
             return true;
         }
@@ -174,10 +159,73 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
 
     @Override
     public void createReminder(Location l, String s, String n) {
-
         Reminder newReminder = new Reminder(l, s, n, Store.MAX_DISTANCE);
         if (store != null) {
             store.add(newReminder);
+
+            if (serviceHasStopped(CurrentLocationService.class)) {
+                startService(locationService);
+            }
+        }
+    }
+
+    private boolean serviceHasStopped(Class<?> serviceClass) {
+        ActivityManager activityMaager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+
+        for (ActivityManager.RunningServiceInfo serviceInfo : activityMaager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(serviceInfo.service.getClassName())) {
+                Toast.makeText(AppActivity.this, "Service is running", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        Toast.makeText(AppActivity.this, "Service has stopped", Toast.LENGTH_SHORT).show();
+        return true;
+    }
+
+    private void removeReminder(int index) {
+        if (store != null) {
+            store.remove(index);
+        }
+    }
+
+//    private void locationServiceUpdate() {
+//        if (store.isEmpty()) {
+//            stopService(locationService);
+//            Toast.makeText(AppActivity.this, "Store is empty", Toast.LENGTH_SHORT).show();
+//        }
+//    }
+
+    private void createNotification(String message) {
+
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(AppActivity.this)
+                        .setSmallIcon(R.drawable.notification_yellow)
+                        .setAutoCancel(true)
+                        .setTicker("Ticker")
+                        .setWhen(System.currentTimeMillis())
+                        .setContentTitle("Reminder")
+                        .setContentText(message)
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .setPriority(Notification.PRIORITY_MAX)
+                ;
+
+
+        Intent resultIntent = new Intent(AppActivity.this, AppActivity.class);
+
+        PendingIntent pendingIntent =
+                PendingIntent.getActivity(AppActivity.this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        notificationBuilder.setContentIntent(pendingIntent);
+
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(NOTIFICATION_ID, notificationBuilder.build());
+    }
+
+    @Override
+    public void datasetChanged() {
+        if (store.isEmpty()) {
+            stopService(locationService);
+            Toast.makeText(AppActivity.this, "Store is empty", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -186,60 +234,21 @@ public class AppActivity extends AppCompatActivity implements NewReminderFragmen
         public void onReceive(Context context, Intent intent) {
 
             Location location = intent.getParcelableExtra(LOCATION);
-
             int index = store.isNear(location);
 
             if (index >= 0) {
                 Reminder reminder = store.getIndex(index);
-//                Toast.makeText(AppActivity.this, "Near " + reminder.getLocationName(), Toast.LENGTH_SHORT).show();
-                createNotification();
+                createNotification(reminder.getText());
+                removeReminder(index);
+                datasetChanged();
+
             } else {
                 Toast.makeText(AppActivity.this, "Not near!", Toast.LENGTH_SHORT).show();
             }
 
         }
 
-        private void createNotification() {
-            NotificationCompat.Builder notificationBuilder =
-                    new NotificationCompat.Builder(AppActivity.this)
-                        .setSmallIcon(R.drawable.remindme_icon)
-                        .setAutoCancel(true)
-                        .setTicker("Tkcner")
-                        .setWhen(System.currentTimeMillis())
-                        .setContentTitle("My notification")
-                        .setContentText("Hello world1")
-                        .setDefaults(Notification.DEFAULT_ALL)
-                        .setPriority(Notification.PRIORITY_MAX);
 
 
-            Intent resultIntent = new Intent(AppActivity.this, AppActivity.class);
-
-            PendingIntent pendingIntent =
-                    PendingIntent.getActivity(AppActivity.this, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-            notificationBuilder.setContentIntent(pendingIntent);
-
-            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            nm.notify(NOTIFICATION_ID, notificationBuilder.build());
-
-
-//            TaskStackBuilder stackBuilder = TaskStackBuilder.create(AppActivity.this);
-//            stackBuilder.addParentStack(AppActivity.class);
-//            stackBuilder.addNextIntent(resultIntent);
-//
-//            PendingIntent resultPendingIntent =
-//                    stackBuilder.getPendingIntent(
-//                            0,
-//                            PendingIntent.FLAG_CANCEL_CURRENT
-//                    );
-//
-//
-//            notificationBuilder.setContentIntent(resultPendingIntent);
-//            NotificationManager notificationManager =
-//                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-//            notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build());
-
-
-        }
     }
 }

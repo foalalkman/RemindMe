@@ -37,6 +37,12 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
     private RecyclerView.LayoutManager layoutManager;
     private String newText = "";
     private MyRecyclerAdapter.ReminderHolder currentReminderHolder;
+    private ReceiverController receiverController;
+
+
+    public interface ReceiverController {
+        void datasetChanged();
+    }
 
 
     @Override
@@ -135,6 +141,23 @@ public class MyListFragment extends Fragment implements MyRecyclerAdapter.UserIn
         });
 
         builder.show();
+    }
+
+    @Override
+    public void notifyActivity() {
+        receiverController.datasetChanged();
+    }
+
+    @Override
+    public void onAttach(Activity a) {
+        super.onAttach(a);
+
+        try {
+            receiverController = (MyListFragment.ReceiverController) a;
+
+        } catch (ClassCastException e) {
+            throw new ClassCastException(a.toString() + " does not implement ReceiverController interface");
+        }
     }
 
     @Override

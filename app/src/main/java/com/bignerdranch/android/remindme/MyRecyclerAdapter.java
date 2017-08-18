@@ -33,6 +33,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
     public interface UserInputDelegate {
         void pickNewPlace(ReminderHolder holder);
         void editText(ReminderHolder r);
+        void notifyActivity();
     }
 
     @Override
@@ -77,12 +78,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
                             case R.id.options_menu_edit_text:
                                 delegate.editText(reminderHolder);
 
+
                                 notifyItemChanged(reminderHolder.position);
                                 break;
 
                             case R.id.options_menu_delete:
                                 reminderArrayList.remove(reminderHolder.reminder);
                                 notifyDataSetChanged();
+                                delegate.notifyActivity();
                                 break;
                         }
                         return false;

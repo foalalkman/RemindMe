@@ -15,6 +15,7 @@ public class Reminder implements Parcelable {
     private String text;
     private int radius;
 
+
     public Reminder(Location l, String t, String ln, int r) {
         location = l;
         locationName = ln;
@@ -33,8 +34,6 @@ public class Reminder implements Parcelable {
     public void setText(String newText) {
         text = newText;
     }
-
-
 
     public Location getLocation() {
         return location;
