@@ -134,7 +134,9 @@ public class AppActivity extends AppCompatActivity
         super.onSaveInstanceState(savedInstanceState);
 
         savedInstanceState.putParcelable(KEY_STORE, store);
-        getSupportFragmentManager().putFragment(savedInstanceState, KEY_CURRENT_FRAGMENT, currentFragment);
+        if (currentFragment.isAdded()){
+            getSupportFragmentManager().putFragment(savedInstanceState, KEY_CURRENT_FRAGMENT, currentFragment);
+        }
     }
 
     @Override
