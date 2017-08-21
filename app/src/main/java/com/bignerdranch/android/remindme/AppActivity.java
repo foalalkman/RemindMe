@@ -22,9 +22,17 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-public class AppActivity extends AppCompatActivity
-        implements NewReminderFragment.ReminderCreator, MyListFragment.ReceiverController {
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
+public class AppActivity extends AppCompatActivity
+        implements NewReminderFragment.ReminderCreator, ServiceControllerFragment.ServiceController {
+
+    private static final String FILENAME = "remindme_data";
     public static final String LOCATION_UPDATE = "location update";
     public static final String LOCATION = "location";
     public static final String KEY_STORE = "store";
@@ -46,7 +54,6 @@ public class AppActivity extends AppCompatActivity
         setContentView(R.layout.app_activity_view);
 
         locationService = new Intent(this, CurrentLocationService.class);
-
         fragmentManager = getSupportFragmentManager();
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -54,7 +61,6 @@ public class AppActivity extends AppCompatActivity
 
         FrameLayout fragmentFrame = (FrameLayout) findViewById(R.id.content_fragment);
         initializeState(savedInstanceState);
-
     }
 
     private void initializeState(Bundle savedInstanceState) {
@@ -67,10 +73,57 @@ public class AppActivity extends AppCompatActivity
 
         } else {
             store = new Store();
+
+            String data = loadData();
+            if (!data.isEmpty()) {
+                Toast.makeText(this, "Not empty", Toast.LENGTH_SHORT).show();
+                store.deSerialize(data);
+            }
+
+            else {
+                Toast.makeText(this, "empty", Toast.LENGTH_SHORT).show();
+            }
+
             currentFragment = new MyListFragment();
         }
     }
 
+    private void saveData() {
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(store.serialize());
+            oos.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private String loadData() {
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            String data = (String) ois.readObject();
+
+            Toast.makeText(this, "Data" + data, Toast.LENGTH_LONG).show();
+
+            ois.close();
+            return data;
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -147,7 +200,7 @@ public class AppActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    // clean up
+    // clean up and save data
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -155,6 +208,8 @@ public class AppActivity extends AppCompatActivity
         if (broadcastReceiver != null) {
             unregisterReceiver(broadcastReceiver);
         }
+
+        saveData();
     }
 
     @Override
@@ -180,11 +235,9 @@ public class AppActivity extends AppCompatActivity
 
         for (ActivityManager.RunningServiceInfo serviceInfo : activityMaager.getRunningServices(Integer.MAX_VALUE)) {
             if (serviceClass.getName().equals(serviceInfo.service.getClassName())) {
-//                Toast.makeText(AppActivity.this, "Service is running", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
-//        Toast.makeText(AppActivity.this, "Service has stopped", Toast.LENGTH_SHORT).show();
         return true;
     }
 
@@ -225,7 +278,7 @@ public class AppActivity extends AppCompatActivity
     }
 
     @Override
-    public void onUpdateStore() {
+    public void serviceControl() {
         if (store.isEmpty()) {
             stopService(locationService);
             Toast.makeText(AppActivity.this, "Store is empty", Toast.LENGTH_SHORT).show();
@@ -238,6 +291,7 @@ public class AppActivity extends AppCompatActivity
     }
 
     public class LocationBroadcastReceiver extends BroadcastReceiver {
+
         @Override // when the receiver receives the intent
         public void onReceive(Context context, Intent intent) {
 
@@ -249,7 +303,7 @@ public class AppActivity extends AppCompatActivity
                 Reminder reminder = store.getIndex(index);
                 createNotification(reminder.getText());
                 removeReminder(index);
-                onUpdateStore();
+                serviceControl();
 
             } else {
                 Toast.makeText(AppActivity.this, "Not near!", Toast.LENGTH_SHORT).show();

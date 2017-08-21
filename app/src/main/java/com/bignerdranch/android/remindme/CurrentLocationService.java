@@ -28,7 +28,7 @@ public class CurrentLocationService extends Service {
         locationManager = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
 
         //noinspection MissingPermission
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 0, locationListener);
     }
 
     @Override
@@ -59,8 +59,6 @@ public class CurrentLocationService extends Service {
         @Override
         public void onLocationChanged(Location location) {
             Intent intent = new Intent(AppActivity.LOCATION_UPDATE); // nyckelsträng för att hitta rätt intent
-
-
 
             intent.putExtra(AppActivity.LOCATION, location);
             sendBroadcast(intent);

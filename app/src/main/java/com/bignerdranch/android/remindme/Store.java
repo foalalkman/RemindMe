@@ -4,20 +4,25 @@ import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by annika on 2017-08-14.
  */
 
-public class Store implements Parcelable {
+public class Store implements Parcelable, Serializable {
 
     private ArrayList<Reminder> reminders;
     public static final int MAX_DISTANCE = 75;
 
     public Store() {
         reminders = new ArrayList<>();
-        testReminders();
     }
 
     private Store(Parcel in) {
@@ -25,7 +30,7 @@ public class Store implements Parcelable {
     }
 
     public Reminder add(Reminder r) {
-        if (!reminders.contains(r)) { // ers'tts den ej?
+        if (!reminders.contains(r)) {
             reminders.add(r);
             return r;
 
@@ -94,4 +99,31 @@ public class Store implements Parcelable {
             return new Store[size];
         }
     };
+
+
+
+    public String serialize() {
+        String out = "";
+        for (Reminder r : reminders) {
+            out += r.serialize();
+        }
+
+        return out;
+    }
+
+    public void deSerialize(String input) {
+
+        String[] rows = input.split("-");
+        Location location;
+
+        for (int i = 0; i < rows.length; i++) {
+            String[] cols = rows[i].split(",");
+            location = new Location("");
+            location.setLatitude(Double.parseDouble(cols[0]));
+            location.setLongitude(Double.parseDouble(cols[1]));
+
+
+            reminders.add(new Reminder(location, cols[2], cols[3], Integer.parseInt(cols[4])));
+        }
+    }
 }

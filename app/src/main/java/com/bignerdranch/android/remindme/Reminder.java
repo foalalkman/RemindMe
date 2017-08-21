@@ -4,22 +4,32 @@ import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by annika on 2017-08-14.
  */
 
-public class Reminder implements Parcelable {
+public class Reminder implements Parcelable, Serializable {
 
     private Location location;
-    private String locationName;
     private String text;
+    private String locationName;
     private int radius;
 
 
     public Reminder(Location l, String t, String ln, int r) {
         location = l;
-        locationName = ln;
         text = t;
+        locationName = ln;
         radius = r;
     }
 
@@ -119,4 +129,59 @@ public class Reminder implements Parcelable {
         }
     };
 
+    public String serialize() {
+        String lat = location.getLatitude() + "";
+        String lon = location.getLongitude() + "";
+
+        return lat + "," + lon + "," + text + "," + locationName + "," + radius + '-';
+    }
+
+//    public JSONObject toJson() {
+//
+//        JSONObject json = new JSONObject();
+//
+//        String lat = location.getLatitude() +"";
+//        String lon = location.getLongitude() +"";
+//        try {
+//            json.put("lat", lat);
+//            json.put("lon", lon);
+//            json.put("text", text);
+//            json.put("locationName", locationName);
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return json;
+//    }
+//
+//    public String toString() {
+//        String lat = location.getLatitude() +"";
+//        String lon = location.getLongitude() +"";
+//
+//        return "{" + lat + ":;" + lon + "::" + text + "::" + locationName + "}";
+//    }
+
+    private void writeObject(ObjectOutputStream oos)
+            throws IOException {
+        oos.defaultWriteObject();
+        oos.writeDouble(location.getLongitude());
+        oos.writeDouble(location.getAltitude());
+        oos.writeObject(text);
+        oos.writeObject(locationName);
+        oos.writeInt(radius);
+    }
+
+    private void readObject(ObjectInputStream o)
+            throws IOException, ClassNotFoundException {
+
+        Location loc = new Location("");
+        loc.setLatitude(o.readDouble());
+        loc.setLatitude(o.readDouble());
+
+        location = loc;
+        text = (String) o.readObject();
+        locationName = (String) o.readObject();
+        radius = o.readInt();
+    }
 }

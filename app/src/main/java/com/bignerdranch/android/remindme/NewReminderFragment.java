@@ -23,7 +23,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
  * Created by annika on 2017-08-09.
  */
 
-public class NewReminderFragment extends ReceiverControllerFragment {
+public class NewReminderFragment extends ServiceControllerFragment {
 
 
     private ReminderCreator reminderCreator;
