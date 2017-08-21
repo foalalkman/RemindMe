@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 /**
  * Created by annika on 2017-08-09.
@@ -21,9 +20,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private final int REQUEST_PERMISSION_ACCESS_FINE_LOCATION = 1;
-
     private Context context;
 
+    /**
+     * If API level is 23 or higher, prompt the user for permission before
+     * launching the app.
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +35,22 @@ public class MainActivity extends AppCompatActivity {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             locationPermission();
         } else {
-            Intent intent = new Intent(MainActivity.this, AppActivity.class);
-            startActivity(intent);
+            launchAppActivity();
         }
     }
 
-    private void locationPermission() {
+    /**
+     * Launches the app.
+     */
+    private void launchAppActivity() {
+        Intent intent = new Intent(MainActivity.this, AppActivity.class);
+        startActivity(intent);
+    }
 
+    /**
+     * Asks for permission
+     */
+    private void locationPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
@@ -57,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Handes the permission result.
+     * @param requestCode who sent this.
+     * @param permissions permissions being asked.
+     * @param grantResults the results.
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -64,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
             case REQUEST_PERMISSION_ACCESS_FINE_LOCATION: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Intent intent = new Intent(this, AppActivity.class);
-                    startActivity(intent);
+                    launchAppActivity();
                 }
             }
         }
