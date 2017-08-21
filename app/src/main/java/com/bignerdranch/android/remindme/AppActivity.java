@@ -20,15 +20,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
+/**
+ * The actual root activity of the app. Controls the Store, the App bar and it's Fragments,
+ * the LocationUpdateService and push notifications.
+ */
 public class AppActivity extends AppCompatActivity
         implements NewReminderFragment.ReminderCreator, ServiceControllerFragment.ServiceController {
 
@@ -48,6 +47,13 @@ public class AppActivity extends AppCompatActivity
     private FragmentManager fragmentManager;
     private Store store;
 
+    /**
+     * Creates an instance of CurrentLocationService to be used if/when
+     * there are Reminders to keep track of.
+     * Creates a FragmentManager to handle the Fragments.
+     * Sets up the Toolbar and calls initializeState.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +69,10 @@ public class AppActivity extends AppCompatActivity
         initializeState(savedInstanceState);
     }
 
+    /**
+     * Initializing the state of the app.
+     * @param savedInstanceState Bundle with data store in.
+     */
     private void initializeState(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             store = savedInstanceState.getParcelable(KEY_STORE);
@@ -73,68 +83,60 @@ public class AppActivity extends AppCompatActivity
 
         } else {
             store = new Store();
-
-            String data = loadData();
-            if (!data.isEmpty()) {
-                Toast.makeText(this, "Not empty", Toast.LENGTH_SHORT).show();
-                store.deSerialize(data);
-            }
-
-            else {
-                Toast.makeText(this, "empty", Toast.LENGTH_SHORT).show();
-            }
-
+//            String data = loadData();
+//            if (!data.isEmpty()) {
+//                Toast.makeText(this, "Not empty", Toast.LENGTH_SHORT).show();
+//                store.deSerialize(data);
+//            } else {
+//                Toast.makeText(this, "empty", Toast.LENGTH_SHORT).show();
+//            }
             currentFragment = new MyListFragment();
         }
     }
 
+    /**
+     * Not done yet. Supposed to write the data of all stored Reminders to file.
+     */
     private void saveData() {
-        try {
-            FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+        FileOutputStream outputStream = null;
 
-            oos.writeObject(store.serialize());
-            oos.close();
+        try {
+            outputStream = openFileOutput(FILENAME, Context.MODE_PRIVATE);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e){
+        }
+
+        try {
+            outputStream.write(store.serialize().getBytes());
+            outputStream.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private String loadData() {
-        try {
-            FileInputStream fis = openFileInput(FILENAME);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            String data = (String) ois.readObject();
+//    private String loadData() {
+//        FileInputStream fis = null;
+//
+////        try {
+////            fis = openFileInput(FILENAME);
+////        }
+//
+//        return "";
+//    }
 
-            Toast.makeText(this, "Data" + data, Toast.LENGTH_LONG).show();
-
-            ois.close();
-            return data;
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return "";
-    }
-
+    /**
+     * Stores the Store and the current fragment when the Activity is being stopped.
+     * @param savedInstanceState the bundle to save state in.
+     */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
 
         savedInstanceState.putParcelable(KEY_STORE, store);
         getSupportFragmentManager().putFragment(savedInstanceState, KEY_CURRENT_FRAGMENT, currentFragment);
-
     }
 
-    // registrera broadcastre.
     @Override
     public void onResume() {
         super.onResume();
@@ -146,17 +148,24 @@ public class AppActivity extends AppCompatActivity
         registerReceiver(broadcastReceiver, new IntentFilter(LOCATION_UPDATE));
     }
 
+    /**
+     * Inflates the action_bar.xml file with the App Bar.
+     * @param menu the App Bar.
+     * @return true when done inflating.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
         return true;
     }
 
+    /**
+     * Invoked when the user press the Action bar.
+     * @param item the MenuItem being pressed.
+     * @return true then the choice was handled.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         if (id == R.id.new_reminder) {
@@ -172,6 +181,9 @@ public class AppActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Creates a NewReminderFragment and starts a transaction with it.
+     */
     private void launchNewReminderFragment() {
         Fragment fragment = new NewReminderFragment();
 
@@ -182,14 +194,15 @@ public class AppActivity extends AppCompatActivity
         currentFragment = fragment;
     }
 
+    /**
+     * Creates a MyListFragment, attach the Reminders to it and start a transaction.
+     */
     private void launchListFragment() {
         Fragment fragment = new MyListFragment();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        //
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList(KEY_REMINDERS, store.getReminders());
         fragment.setArguments(bundle);
-        //
         transaction.replace(R.id.content_fragment, fragment);
         transaction.commit();
         currentFragment = fragment;
@@ -200,18 +213,27 @@ public class AppActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    // clean up and save data
+    /**
+     * The last method in the Activity lifecycle. If the app is stopped
+     * the Reminders has to be saved and the BroadCastReceiver need to disconnect.
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
+//        saveData();
 
         if (broadcastReceiver != null) {
             unregisterReceiver(broadcastReceiver);
         }
-
-        saveData();
     }
 
+    /**
+     * Creates a new Reminder.
+     * Also, if the CurrentLocationService has stopped, it will will be started.
+     * @param l Location for the Reminder.
+     * @param s Text for the Reminder.
+     * @param n LocationName for the Reminder.
+     */
     @Override
     public void createReminder(Location l, String s, String n) {
         Reminder newReminder = new Reminder(l, s, n, Store.MAX_DISTANCE);
@@ -219,17 +241,16 @@ public class AppActivity extends AppCompatActivity
             store.add(newReminder);
 
             if (serviceHasStopped(CurrentLocationService.class)) {
-                Toast.makeText(AppActivity.this, "Service stopped, start it", Toast.LENGTH_SHORT).show();
                 startService(locationService);
-            }
-            if (serviceHasStopped(CurrentLocationService.class)) {
-                Toast.makeText(AppActivity.this, "Service still stopped", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(AppActivity.this, "Service running", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
+    /**
+     * Asks the system if a certain service is running.
+     * @param serviceClass the class of the Service of interest.
+     * @return true if serviceClass is running.
+     */
     private boolean serviceHasStopped(Class<?> serviceClass) {
         ActivityManager activityMaager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 
@@ -241,14 +262,21 @@ public class AppActivity extends AppCompatActivity
         return true;
     }
 
+    /**
+     * Removes the Reminder in Store located at a certain index.
+     * @param index the index of the Reminder to be removed.
+     */
     private void removeReminder(int index) {
         if (store != null) {
             store.remove(index);
         }
     }
 
+    /**
+     * Constructs and sending a notification with the message String.
+     * @param message The message to be displayed in the notification.
+     */
     private void createNotification(String message) {
-
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(AppActivity.this)
                         .setSmallIcon(R.drawable.notification_yellow)
@@ -277,21 +305,36 @@ public class AppActivity extends AppCompatActivity
         nm.notify(NOTIFICATION_ID, notificationBuilder.build());
     }
 
+    /**
+     * Stops the LocationSevice if there are no Reminders to keep track of,
+     * and if there are Reminders in Store, and the LocationService is not running,
+     * it starts it again.
+     */
     @Override
     public void serviceControl() {
         if (store.isEmpty()) {
             stopService(locationService);
-            Toast.makeText(AppActivity.this, "Store is empty", Toast.LENGTH_SHORT).show();
-        } else {
 
+        } else {
             if (serviceHasStopped(CurrentLocationService.class)) {
+
                 startService(locationService);
             }
         }
     }
 
+    /**
+     * Custom BroadCastReceiver for receiving messages from CurrentLocationService.
+     */
     public class LocationBroadcastReceiver extends BroadcastReceiver {
 
+        /**
+         * Called when the receiver receives the intent.
+         * Asking Store if the current location is near any of the Reminder's locations,
+         * if so a notification is sent and the Reminder is removed.
+         * @param context the context in which the receiver is running.
+         * @param intent intent containing the current location.
+         */
         @Override // when the receiver receives the intent
         public void onReceive(Context context, Intent intent) {
 
@@ -299,19 +342,12 @@ public class AppActivity extends AppCompatActivity
             int index = store.isNear(location);
 
             if (index >= 0) {
-                Toast.makeText(AppActivity.this, "Near!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(AppActivity.this, "Near!", Toast.LENGTH_SHORT).show();
                 Reminder reminder = store.getIndex(index);
                 createNotification(reminder.getText());
                 removeReminder(index);
                 serviceControl();
-
-            } else {
-                Toast.makeText(AppActivity.this, "Not near!", Toast.LENGTH_SHORT).show();
             }
-
         }
-
-
-
     }
 }

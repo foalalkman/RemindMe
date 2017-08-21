@@ -4,19 +4,16 @@ import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by annika on 2017-08-14.
  */
 
-public class Store implements Parcelable, Serializable {
+/**
+ * A custom wrapper class for the ArrayList holding the Reminders.
+ */
+public class Store implements Parcelable {
 
     private ArrayList<Reminder> reminders;
     public static final int MAX_DISTANCE = 75;
@@ -25,10 +22,20 @@ public class Store implements Parcelable, Serializable {
         reminders = new ArrayList<>();
     }
 
+    /**
+     * The private constructor used by the Creator, that assigns the saved values to the
+     * new instance.
+     * @param in the Parcel holding the old state.
+     */
     private Store(Parcel in) {
         in.readTypedList(reminders, null);
     }
 
+    /**
+     * Adds a new Reminder to the store.
+     * @param r new Reminder/
+     * @return the new Reminder if it wasn't already added.
+     */
     public Reminder add(Reminder r) {
         if (!reminders.contains(r)) {
             reminders.add(r);
@@ -39,14 +46,27 @@ public class Store implements Parcelable, Serializable {
         }
     }
 
+    /**
+     * @return the reminders.
+     */
     public ArrayList<Reminder> getReminders() {
         return reminders;
     }
 
+    /**
+     * @param i an index
+     * @return the Reminder located at the specified index.
+     */
     public Reminder getIndex(int i) {
         return reminders.get(i);
     }
 
+    /**
+     * Iterates over the collection of Reminders, to see if
+     * one is close to the Location.
+     * @param location A Location.
+     * @return the index of a Reminder close to the Location.
+     */
     public int isNear(Location location) {
 
         for (Reminder reminder : reminders) {
@@ -58,50 +78,73 @@ public class Store implements Parcelable, Serializable {
         return -1;
     }
 
+    /**
+     * @return true if there are no reminders in store.
+     */
     public boolean isEmpty() {
         return reminders.isEmpty();
     }
 
+    /**
+     * Removes a Reminder based on it's index.
+     * @param index the index.
+     */
     public void remove(int index) {
         reminders.remove(index);
     }
 
-    private void testReminders() {
-        Location l1 = new Location("");
-        l1.setLongitude(59.345615);
-        l1.setLatitude(18.111754);
-        reminders.add(new Reminder(l1, "Diska", "Öregrundsgatan 11", MAX_DISTANCE));
-
-        Location l2 = new Location("");
-        l2.setLongitude(59.344616);
-        l2.setLatitude(18.108195);
-        reminders.add(new Reminder(l2, "Handla ost", "Ica Värtan", MAX_DISTANCE));
-    }
-
+    /**
+     * Makes it possible to pass more information about the class, in form of a bit mask.
+     * @return a bitmask with information, 0 if none.
+     */
     @Override
     public int describeContents() {
         return 0;
     }
 
+    /**
+     * This is where the Parcel object is filled with the values that needs to be saved.
+     * @param parcel a Parcel object for storing data.
+     * @param i describes different ways to write to the parcel.
+     */
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeTypedList(reminders);
     }
 
+    /**
+     * For receiving the class loader in the Java Runtime Environment,
+     * which can load a class dynamically during runtime. It will use the private constructor
+     * that takes a Parcel instance.
+     */
     public final Parcelable.Creator<Store> CREATOR = new Parcelable.Creator<Store>() {
+        /**
+         * When createFromParcel is called by the system, it takes the Parcel with all the
+         * information and use the private constructor to make a new instance of Store that
+         * mirrors the old one.
+         * @param source the parcel storing the old state.
+         * @return a new Store object similar to the old one.
+         */
         @Override
         public Store createFromParcel(Parcel source) {
             return new Store(source);
         }
 
+        /**
+         * Allows an array of the class to be parcelled.
+         * @param size the size of the array to be created.
+         * @return An empty array with the specified length.
+         */
         @Override
         public Store[] newArray(int size) {
             return new Store[size];
         }
     };
 
-
-
+    /**
+     * Assembles the Reminders serialized strings into one to be saved to file.
+     * @return the string containing all the reminders serialized strings.
+     */
     public String serialize() {
         String out = "";
         for (Reminder r : reminders) {
@@ -111,6 +154,10 @@ public class Store implements Parcelable, Serializable {
         return out;
     }
 
+    /**
+     * Chops the input string and create new Reminder objects from the data.
+     * @param input string with data stored in the device.
+     */
     public void deSerialize(String input) {
 
         String[] rows = input.split("-");

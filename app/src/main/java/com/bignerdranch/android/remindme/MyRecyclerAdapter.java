@@ -16,6 +16,13 @@ import java.util.ArrayList;
  * Created by annika on 2017-08-16.
  */
 
+
+/**
+ * MyRecyclerAdapter is a customized RecyclerAdapter for displaying the reminders with the text and
+ * the location name. It also provides the user with options for each reminder, such as edit text,
+ * change Place and remove.
+ * It communicates with MyListFragment through the UserInputDelegate interface.
+ */
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ReminderHolder>
 {
     private ArrayList<Reminder> dataset;
@@ -28,12 +35,22 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         delegate = d;
     }
 
-    public interface UserInputDelegate {
+    /**
+     * Interface implemented by MyListFragment, for handling button clicks
+     * in the options menu.
+     */
+    interface UserInputDelegate {
         void pickNewPlace(ReminderHolder holder);
         void editText(ReminderHolder r);
         void notifyActivity();
     }
 
+    /**
+     * Inflates the ReminderHolder with the view.
+     * @param parent the parent in which the new view will be added to.
+     * @param viewType view type of the new view.
+     * @return a ViewHolder with the new View.
+     */
     @Override
     public ReminderHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_recyclerview, parent, false);
@@ -41,6 +58,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         return new ReminderHolder(v);
     }
 
+    /**
+     * The RecyclerView calls it to display the data at the specified position.
+     * @param holder the current reminderholder.
+     * @param position the specified position.
+     */
     @Override
     public void onBindViewHolder(ReminderHolder holder, int position) {
         final Reminder reminder = dataset.get(position);
@@ -49,10 +71,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         holder.locationView.setText(reminder.getLocationName());
         setButtonListener(holder);
         holder.position = position;
-
-        // holder update
     }
 
+    /**
+     * Creates the optionsButton and sets the onclickListener to it.
+     * When clicked, a little options menu pops up, where the user
+     * can choose to remove the reminder, edit the text or change the place.
+     * @param holder
+     */
     private void setButtonListener(ReminderHolder holder) {
         final Context c = this.context;
         final ReminderHolder reminderHolder = holder;
@@ -91,16 +117,23 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
                 });
 
                 popupMenu.show();
-
             }
         });
     }
 
+    /**
+     * @return the number of reminders held by the adapter.
+     */
     @Override
     public int getItemCount() {
         return dataset.size();
     }
 
+    /**
+     * ReminderHolder is a customized ViewHolder,
+     * that binds the data of the Reminder to a view for being displayed
+     * inside the RecyclerView.
+     */
     class ReminderHolder extends RecyclerView.ViewHolder {
 
         TextView titleView;
@@ -109,7 +142,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         Reminder reminder;
         int position;
 
-        public ReminderHolder(View view) {
+        ReminderHolder(View view) {
             super(view);
 
             titleView = (TextView) view.findViewById(R.id.reminder_title_view);

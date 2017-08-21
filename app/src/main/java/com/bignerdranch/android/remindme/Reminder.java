@@ -4,21 +4,16 @@ import android.location.Location;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by annika on 2017-08-14.
  */
 
-public class Reminder implements Parcelable, Serializable {
+/**
+ * Reminder holds the information about a reminder:
+ * the text message, a location and a radius for the Reminder to be triggered,
+ * a locationName for a better user experience.
+ */
+public class Reminder implements Parcelable {
 
     private Location location;
     private String text;
@@ -33,35 +28,49 @@ public class Reminder implements Parcelable, Serializable {
         radius = r;
     }
 
+    /**
+     * @param newLocation new Location to be set as the location.
+     */
     public void setLocation(Location newLocation) {
         location = newLocation;
     }
 
+    /**
+     * @param newName new name to be set as locationName.
+     */
     public void setLocationName(String newName) {
         locationName = newName;
     }
 
+    /**
+     * @param newText new text to be set as text.
+     */
     public void setText(String newText) {
         text = newText;
     }
 
-    public Location getLocation() {
-        return location;
-    }
-
+    /**
+     * @return locationName.
+     */
     public String getLocationName() { return locationName; }
 
+    /**
+     * @return text.
+     */
     public String getText() {
         return text;
     }
 
+    /**
+     * @param other a Location to compare with.
+     * @return true if the other Location is located inside the
+     * radius of this.locatino.
+     */
     public boolean isNear(Location other) {
         if (this.location.distanceTo(other) < radius) {
             return true;
         }
-
         return false;
-
     }
 
     /**
@@ -129,59 +138,13 @@ public class Reminder implements Parcelable, Serializable {
         }
     };
 
+    /**
+     * @return the member variables as one string for internal storage.
+     */
     public String serialize() {
         String lat = location.getLatitude() + "";
         String lon = location.getLongitude() + "";
 
         return lat + "," + lon + "," + text + "," + locationName + "," + radius + '-';
-    }
-
-//    public JSONObject toJson() {
-//
-//        JSONObject json = new JSONObject();
-//
-//        String lat = location.getLatitude() +"";
-//        String lon = location.getLongitude() +"";
-//        try {
-//            json.put("lat", lat);
-//            json.put("lon", lon);
-//            json.put("text", text);
-//            json.put("locationName", locationName);
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return json;
-//    }
-//
-//    public String toString() {
-//        String lat = location.getLatitude() +"";
-//        String lon = location.getLongitude() +"";
-//
-//        return "{" + lat + ":;" + lon + "::" + text + "::" + locationName + "}";
-//    }
-
-    private void writeObject(ObjectOutputStream oos)
-            throws IOException {
-        oos.defaultWriteObject();
-        oos.writeDouble(location.getLongitude());
-        oos.writeDouble(location.getAltitude());
-        oos.writeObject(text);
-        oos.writeObject(locationName);
-        oos.writeInt(radius);
-    }
-
-    private void readObject(ObjectInputStream o)
-            throws IOException, ClassNotFoundException {
-
-        Location loc = new Location("");
-        loc.setLatitude(o.readDouble());
-        loc.setLatitude(o.readDouble());
-
-        location = loc;
-        text = (String) o.readObject();
-        locationName = (String) o.readObject();
-        radius = o.readInt();
     }
 }

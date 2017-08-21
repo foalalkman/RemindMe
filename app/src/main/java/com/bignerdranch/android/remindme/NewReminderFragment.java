@@ -23,19 +23,31 @@ import com.google.android.gms.location.places.ui.PlacePicker;
  * Created by annika on 2017-08-09.
  */
 
+
+/**
+ * NewReminderFragment simply prompts the user for information when creating a new Reminder.
+ * Doing it by showing AlertDialogs and an instance of Google Play Services PlacePicker.
+ */
 public class NewReminderFragment extends ServiceControllerFragment {
 
-
     private ReminderCreator reminderCreator;
-
     public static final int PLACE_PICKER_REQUEST = 199;
     private String dialogInputString;
     private int status;
 
+    /**
+     * An interface for communicating with the calling Activity(AppActivity)
+     * to be able to create a new reminder.
+     *
+     */
     public interface ReminderCreator {
         void createReminder(Location l, String n, String s);
     }
 
+    /**
+     * Makes sure that the calling Activity implements the ReminderController interface.
+     * @param a the calling activity.
+     */
     @Override
     public void onAttach(Activity a) {
         super.onAttach(a);
@@ -48,11 +60,23 @@ public class NewReminderFragment extends ServiceControllerFragment {
         }
     }
 
+    /**
+     * Initial creation of the Fragment.
+     * @param savedInstanceState Holds the state of the Fragment if the Fragment
+     *                           is being re-created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Inflates the fragment with it's view and calls showInputDialog().
+     * @param inflater used to inflate a layout object.
+     * @param container the parent view.
+     * @param savedInstanceState can store previous states of the fragment.
+     * @return the view of the Fragment.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
@@ -63,8 +87,10 @@ public class NewReminderFragment extends ServiceControllerFragment {
         return view;
     }
 
+    /**
+     * Launch the Google Play Services PlacePicker.
+     */
     private void launchPlacePicker() {
-
         status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getActivity());
 
         if (status == ConnectionResult.SUCCESS) {
@@ -82,6 +108,10 @@ public class NewReminderFragment extends ServiceControllerFragment {
         }
     }
 
+    /**
+     * Builds and shows an input dialog where the user can type
+     * the text for the reminder being created.
+     */
     private void showInputDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final EditText inputField = new EditText(getContext());
@@ -109,6 +139,12 @@ public class NewReminderFragment extends ServiceControllerFragment {
         builder.show();
     }
 
+    /**
+     * Called when the PlacePicker exits.
+     * @param requestCode a request code to see where the result came from.
+     * @param resultCode the result of the operation.
+     * @param data the intent with the Place being picked.
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {
@@ -117,11 +153,15 @@ public class NewReminderFragment extends ServiceControllerFragment {
 
                 Place place = PlacePicker.getPlace(data, getActivity());
                 showConfirmationDialog(place);
-//
             }
         }
     }
 
+    /**
+     * Called after a place has been picked. Builds an Alert Dialog
+     * so the user can confirm the data before a new Reminder is being created.
+     * @param place the place that the user picked.
+     */
     private void showConfirmationDialog(Place place) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(buildMessageString(place)).setTitle(R.string.confirmation_dialog_title);
@@ -144,8 +184,6 @@ public class NewReminderFragment extends ServiceControllerFragment {
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
-                // reset variables
                 dialogInputString = "";
             }
         });
@@ -153,11 +191,19 @@ public class NewReminderFragment extends ServiceControllerFragment {
         builder.show();
     }
 
+    /**
+     * Builds a string to be sent to a confirmation alert dialog.
+     * @param place the place that the user picked.
+     * @return A string questioning if the Reminder text and the Place is ok.
+     */
     private String buildMessageString(Place place) {
         String message = String.format("%s at %s", dialogInputString, place.getName());
         return message;
     }
 
+    /**
+     * Makes sure the dataInputString is cleaned up when Fragment is being destroyed.
+     */
     @Override
     public void onDestroy() {
         super.onDestroy();
