@@ -20,9 +20,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * The actual root activity of the app. Controls the Store, the App bar and it's Fragments,
@@ -83,6 +88,11 @@ public class AppActivity extends AppCompatActivity
 
         } else {
             store = new Store();
+
+            String data = loadData();
+            if (!data.isEmpty()) {
+                store.deSerialize(data);
+            }
 //            String data = loadData();
 //            if (!data.isEmpty()) {
 //                Toast.makeText(this, "Not empty", Toast.LENGTH_SHORT).show();
@@ -115,15 +125,30 @@ public class AppActivity extends AppCompatActivity
         }
     }
 
-//    private String loadData() {
-//        FileInputStream fis = null;
-//
-////        try {
-////            fis = openFileInput(FILENAME);
-////        }
-//
-//        return "";
-//    }
+    private String loadData() {
+        StringBuilder stringBuilder = new StringBuilder();
+        FileInputStream fis;
+
+        try {
+            fis = openFileInput(FILENAME);
+
+            if (fis != null) {
+                InputStreamReader streamReader = new InputStreamReader(fis);
+                BufferedReader bufferedReader = new BufferedReader(streamReader);
+                String nextLine = null;
+
+                while ((nextLine = bufferedReader.readLine())!= null) {
+                    stringBuilder.append(nextLine);
+                }
+                fis.close();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return stringBuilder.toString();
+    }
 
     /**
      * Stores the Store and the current fragment when the Activity is being stopped.
@@ -134,7 +159,7 @@ public class AppActivity extends AppCompatActivity
         super.onSaveInstanceState(savedInstanceState);
 
         savedInstanceState.putParcelable(KEY_STORE, store);
-        if (currentFragment.isAdded()){
+        if (currentFragment != null && currentFragment.isAdded()){
             getSupportFragmentManager().putFragment(savedInstanceState, KEY_CURRENT_FRAGMENT, currentFragment);
         }
     }
@@ -222,7 +247,7 @@ public class AppActivity extends AppCompatActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        saveData();
+        saveData();
 
         if (broadcastReceiver != null) {
             unregisterReceiver(broadcastReceiver);

@@ -10,7 +10,17 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e634bed-86af-42d9-91b4-5082dfd337cf" name="Default" comment="" />
+    <list default="true" id="0e634bed-86af-42d9-91b4-5082dfd337cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java" />
+    </list>
     <ignored path="RemindMe.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,26 +50,21 @@
     <favorites_list name="RemindMe" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.475752">
+    <splitter split-orientation="horizontal" split-proportion="0.57608694">
       <split-first>
         <leaf>
-          <file leaf-file-name="AppActivity.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="AppActivity.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="208">
-                  <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+                <state relative-caret-position="193">
+                  <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="docComment;class#AppActivity#0" expanded="false" />
                     <element signature="docComment;method#onCreate#0;class#AppActivity#0" expanded="false" />
                     <element signature="docComment;method#initializeState#0;class#AppActivity#0" expanded="false" />
-                    <element signature="e#3124#3163#0" expanded="false" />
-                    <element signature="docComment;method#saveData#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#saveData#0;class#AppActivity#0" expanded="false" />
-                    <element signature="e#4052#4085#0" expanded="false" />
+                    <element signature="e#3407#3446#0" expanded="false" />
                     <element signature="docComment;method#onSaveInstanceState#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#onSaveInstanceState#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#onResume#0;class#AppActivity#0" expanded="false" />
                     <element signature="docComment;method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
                     <element signature="method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
                     <element signature="docComment;method#onOptionsItemSelected#0;class#AppActivity#0" expanded="false" />
@@ -78,11 +83,38 @@
                     <element signature="method#serviceControl#0;class#AppActivity#0" expanded="false" />
                     <element signature="docComment;method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
                     <element signature="method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
-                    <marker date="1503320611000" expanded="false" signature="5900:5982" ph="/**...*/" />
-                    <marker date="1503320611000" expanded="false" signature="6304:6400" ph="/**...*/" />
-                    <marker date="1503320611000" expanded="false" signature="7026:7192" ph="/**...*/" />
-                    <marker date="1503320611000" expanded="false" signature="10451:10649" ph="/**...*/" />
-                    <marker date="1503320611000" expanded="false" signature="10940:11035" ph="/**...*/" />
+                    <marker date="1503432437000" expanded="false" signature="6745:6827" ph="/**...*/" />
+                    <marker date="1503432437000" expanded="false" signature="7149:7245" ph="/**...*/" />
+                    <marker date="1503432437000" expanded="false" signature="7871:8037" ph="/**...*/" />
+                    <marker date="1503432437000" expanded="false" signature="11294:11492" ph="/**...*/" />
+                    <marker date="1503432437000" expanded="false" signature="11783:11878" ph="/**...*/" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Store.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="220">
+                  <caret line="160" column="27" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="27" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="docComment;method#Store#1;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#add#0;class#Store#0" expanded="false" />
+                    <element signature="method#add#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#getReminders#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#getIndex#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#isNear#0;class#Store#0" expanded="false" />
+                    <element signature="method#isNear#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#isEmpty#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#remove#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#describeContents#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#writeToParcel#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;field#CREATOR#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#serialize#0;class#Store#0" expanded="false" />
+                    <element signature="method#serialize#0;class#Store#0" expanded="false" />
+                    <element signature="docComment;method#deSerialize#0;class#Store#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -108,46 +140,6 @@
                     <element signature="docComment;method#onStatusChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
                     <marker date="1503319043000" expanded="false" signature="2134:2221" ph="/**...*/" />
                     <marker date="1503319043000" expanded="false" signature="2264:2453" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="840">
-                  <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="docComment;class#MainActivity#0" expanded="false" />
-                    <element signature="docComment;method#onCreate#0;class#MainActivity#0" expanded="false" />
-                    <element signature="docComment;method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
-                    <element signature="method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
-                    <element signature="docComment;method#locationPermission#0;class#MainActivity#0" expanded="false" />
-                    <element signature="docComment;method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Reminder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="133" selection-end-column="11" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="docComment;class#Reminder#0" expanded="false" />
-                    <element signature="method#Reminder#0;class#Reminder#0" expanded="false" />
-                    <element signature="docComment;method#setLocation#0;class#Reminder#0" expanded="false" />
-                    <element signature="docComment;method#setLocationName#0;class#Reminder#0" expanded="false" />
-                    <element signature="docComment;method#setText#0;class#Reminder#0" expanded="false" />
-                    <element signature="docComment;method#getLocationName#0;class#Reminder#0" expanded="false" />
-                    <element signature="docComment;method#getText#0;class#Reminder#0" expanded="false" />
-                    <element signature="docComment;method#isNear#0;class#Reminder#0" expanded="false" />
-                    <element signature="docComment;method#serialize#0;class#Reminder#0" expanded="false" />
-                    <element signature="method#serialize#0;class#Reminder#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -217,8 +209,8 @@
           <file leaf-file-name="NewReminderFragment.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+                <state relative-caret-position="170">
+                  <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="docComment;class#NewReminderFragment#0" expanded="false" />
@@ -2227,15 +2219,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/CurrentLocationService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
+    <option name="x" value="79" />
     <option name="y" value="22" />
-    <option name="width" value="1671" />
+    <option name="width" value="1514" />
     <option name="height" value="977" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -2326,7 +2318,7 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="Nexus_5X_API_26" />
-    <property name="SearchEverywhereHistoryKey" value="device moni&#9;ACTION&#9;Android.RunDdms&#10;sync &#9;ACTION&#9;Android.SyncProject&#10;Application ID&#9;PSI&#9;JAVA://com.bignerdranch.android.remindme.BuildConfig#APPLICATION_ID&#10;sync project&#9;ACTION&#9;Android.SyncProject&#10;Sync proje&#9;ACTION&#9;Android.SyncProject" />
+    <property name="SearchEverywhereHistoryKey" value="android &#9;ACTION&#9;Android.RunDdms&#10;device moni&#9;ACTION&#9;Android.RunDdms&#10;sync &#9;ACTION&#9;Android.SyncProject&#10;Application ID&#9;PSI&#9;JAVA://com.bignerdranch.android.remindme.BuildConfig#APPLICATION_ID&#10;sync project&#9;ACTION&#9;Android.SyncProject&#10;Sync proje&#9;ACTION&#9;Android.SyncProject" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme" />
@@ -2721,7 +2713,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="22" width="1671" height="977" extended-state="0" />
+    <frame x="79" y="22" width="1514" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2730,14 +2722,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28455284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.60162604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12154696" sideWeight="0.49593496" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120923914" sideWeight="0.49593496" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24975418" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3023,32 +3015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#Store#1;class#Store#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Store#0" expanded="false" />
-            <element signature="method#add#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#getReminders#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#getIndex#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#isNear#0;class#Store#0" expanded="false" />
-            <element signature="method#isNear#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#isEmpty#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#remove#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#describeContents#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#writeToParcel#0;class#Store#0" expanded="false" />
-            <element signature="docComment;field#CREATOR#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#serialize#0;class#Store#0" expanded="false" />
-            <element signature="method#serialize#0;class#Store#0" expanded="false" />
-            <element signature="docComment;method#deSerialize#0;class#Store#0" expanded="false" />
-            <element signature="method#deSerialize#0;class#Store#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/ServiceControllerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -3056,26 +3022,6 @@
           <folding>
             <element signature="docComment;class#ServiceControllerFragment#0" expanded="false" />
             <element signature="docComment;method#onAttach#0;class#ServiceControllerFragment#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="133" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Reminder#0" expanded="false" />
-            <element signature="method#Reminder#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#setLocation#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#setLocationName#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#setText#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#getLocationName#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#getText#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#isNear#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#serialize#0;class#Reminder#0" expanded="false" />
-            <element signature="method#serialize#0;class#Reminder#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3133,33 +3079,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/CurrentLocationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;method#onCreate#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="method#onCreate#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;method#onStartCommand#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="method#onStartCommand#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;method#onBind#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;method#onLocationChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="method#onLocationChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;method#onProviderEnabled#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;method#onProviderDisabled#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-            <element signature="docComment;method#onStatusChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-            <marker date="1503319043000" expanded="false" signature="2134:2221" ph="/**...*/" />
-            <marker date="1503319043000" expanded="false" signature="2264:2453" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#NewReminderFragment#0" expanded="false" />
@@ -3185,22 +3108,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="148" column="5" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Reminder#0" expanded="false" />
+            <element signature="method#Reminder#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#setLocation#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#setLocationName#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#setText#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#getLocationName#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#getText#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#isNear#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#serialize#0;class#Reminder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#locationPermission#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/CurrentLocationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;method#onCreate#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="method#onCreate#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;method#onStartCommand#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="method#onStartCommand#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;method#onBind#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;method#onLocationChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="method#onLocationChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;method#onProviderEnabled#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;method#onProviderDisabled#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
+            <element signature="docComment;method#onStatusChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
+            <marker date="1503319043000" expanded="false" signature="2134:2221" ph="/**...*/" />
+            <marker date="1503319043000" expanded="false" signature="2264:2453" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="160" column="27" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Store#1;class#Store#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#Store#0" expanded="false" />
+            <element signature="method#add#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#getReminders#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#getIndex#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#isNear#0;class#Store#0" expanded="false" />
+            <element signature="method#isNear#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#isEmpty#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#remove#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#describeContents#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#writeToParcel#0;class#Store#0" expanded="false" />
+            <element signature="docComment;field#CREATOR#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#serialize#0;class#Store#0" expanded="false" />
+            <element signature="method#serialize#0;class#Store#0" expanded="false" />
+            <element signature="docComment;method#deSerialize#0;class#Store#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+        <state relative-caret-position="193">
+          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onCreate#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#initializeState#0;class#AppActivity#0" expanded="false" />
-            <element signature="e#3124#3163#0" expanded="false" />
-            <element signature="docComment;method#saveData#0;class#AppActivity#0" expanded="false" />
-            <element signature="method#saveData#0;class#AppActivity#0" expanded="false" />
-            <element signature="e#4052#4085#0" expanded="false" />
+            <element signature="e#3407#3446#0" expanded="false" />
             <element signature="docComment;method#onSaveInstanceState#0;class#AppActivity#0" expanded="false" />
-            <element signature="method#onSaveInstanceState#0;class#AppActivity#0" expanded="false" />
-            <element signature="method#onResume#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onOptionsItemSelected#0;class#AppActivity#0" expanded="false" />
@@ -3219,27 +3220,11 @@
             <element signature="method#serviceControl#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
             <element signature="method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
-            <marker date="1503320611000" expanded="false" signature="5900:5982" ph="/**...*/" />
-            <marker date="1503320611000" expanded="false" signature="6304:6400" ph="/**...*/" />
-            <marker date="1503320611000" expanded="false" signature="7026:7192" ph="/**...*/" />
-            <marker date="1503320611000" expanded="false" signature="10451:10649" ph="/**...*/" />
-            <marker date="1503320611000" expanded="false" signature="10940:11035" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#locationPermission#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <marker date="1503432437000" expanded="false" signature="6745:6827" ph="/**...*/" />
+            <marker date="1503432437000" expanded="false" signature="7149:7245" ph="/**...*/" />
+            <marker date="1503432437000" expanded="false" signature="7871:8037" ph="/**...*/" />
+            <marker date="1503432437000" expanded="false" signature="11294:11492" ph="/**...*/" />
+            <marker date="1503432437000" expanded="false" signature="11783:11878" ph="/**...*/" />
           </folding>
         </state>
       </provider>
