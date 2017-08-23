@@ -36,8 +36,8 @@
         android:text="@string/new_reminder_button_string"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@color/appBar"
-        android:textColor="@color/white" />
+        android:background="@color/white"
+        android:textColor="@color/appBar" />
 
     
 
