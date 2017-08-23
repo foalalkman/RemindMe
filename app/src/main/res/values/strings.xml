@@ -13,4 +13,6 @@
     <string name="menu_item_edit_text">Edit text</string>
     <string name="menu_item_edit_location">Edit location</string>
     <string name="menu_item_delete">Delete</string>
+
+    <string name="recycler_heading">YOUR REMINDERS:</string>
 </resources>
