@@ -98,19 +98,29 @@ public class MyListFragment extends ServiceControllerFragment
         newReminderButton = (Button) view.findViewById(R.id.new_reminder_button);
         newReminderButton.setOnClickListener(this);
 
+        setButtonVisibility();
         initializeRecyclerView();
 
         return view;
     }
 
+    @Override
+    public void setButtonVisibility() {
+        if (reminders.isEmpty()) {
+            newReminderButton.setVisibility(View.VISIBLE);
+
+        } else {
+            newReminderButton.setVisibility(View.GONE);
+        }
+    }
+
     /**
      * Sets everything up for the recycler view using the custom MyRecyclerAdapter.
      */
-    private void initializeRecyclerView() {
+    @Override
+    public void initializeRecyclerView() {
 
-        if (!reminders.isEmpty()) {
-            newReminderButton.setVisibility(View.GONE);
-        }
+
 
         recyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
         layoutManager = new LinearLayoutManager(getActivity());

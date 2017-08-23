@@ -1,6 +1,7 @@
 package com.bignerdranch.android.remindme;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -43,6 +44,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         void pickNewPlace(ReminderHolder holder);
         void editText(ReminderHolder r);
         void notifyActivity();
+        void setButtonVisibility();
+        void initializeRecyclerView();
     }
 
     /**
@@ -68,6 +71,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         final Reminder reminder = dataset.get(position);
         holder.reminder = reminder;
         holder.titleView.setText(reminder.getText());
+        holder.titleView.setTypeface(null, Typeface.BOLD);
         holder.locationView.setText(reminder.getLocationName());
         setButtonListener(holder);
         holder.position = position;
@@ -109,6 +113,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
                             case R.id.options_menu_delete:
                                 reminderArrayList.remove(reminderHolder.reminder);
                                 notifyDataSetChanged();
+                                delegate.setButtonVisibility();
+                                delegate.initializeRecyclerView();
                                 delegate.notifyActivity();
                                 break;
                         }
