@@ -1,6 +1,5 @@
 package com.bignerdranch.android.remindme;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import android.support.v7.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private final int REQUEST_PERMISSION_ACCESS_FINE_LOCATION = 1;
-    private Context context;
 
     /**
      * If API level is 23 or higher, prompt the user for permission before

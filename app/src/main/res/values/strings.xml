@@ -10,4 +10,7 @@
     <string name="confirmation_dialog_new_place">Confirm change</string>
 
     <string name="new_reminder_button_string">Add a new reminder!</string>
+    <string name="menu_item_edit_text">Edit text</string>
+    <string name="menu_item_edit_location">Edit location</string>
+    <string name="menu_item_delete">Delete</string>
 </resources>

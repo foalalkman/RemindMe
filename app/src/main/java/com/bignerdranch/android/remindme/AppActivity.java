@@ -268,6 +268,7 @@ public class AppActivity extends AppCompatActivity
                 startService(locationService);
             }
         }
+        launchListFragment();
     }
 
     /**

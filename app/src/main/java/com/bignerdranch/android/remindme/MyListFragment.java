@@ -37,6 +37,7 @@ import java.util.ArrayList;
 public class MyListFragment extends ServiceControllerFragment
         implements MyRecyclerAdapter.UserInputDelegate, View.OnClickListener {
 
+    private Button newReminderButton;
     private ArrayList<Reminder> reminders;
     private View view;
     private RecyclerView recyclerView;
@@ -94,23 +95,23 @@ public class MyListFragment extends ServiceControllerFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.list_fragment_view, container, false);
-        Button newReminderButton = (Button) view.findViewById(R.id.new_reminder_button);
+        newReminderButton = (Button) view.findViewById(R.id.new_reminder_button);
         newReminderButton.setOnClickListener(this);
 
-        if (!reminders.isEmpty()) {
-            newReminderButton.setVisibility(View.GONE);
-        }
-
-        initializeRecyclerView(view);
+        initializeRecyclerView();
 
         return view;
     }
 
     /**
      * Sets everything up for the recycler view using the custom MyRecyclerAdapter.
-     * @param view the root view.
      */
-    private void initializeRecyclerView(View view) {
+    private void initializeRecyclerView() {
+
+        if (!reminders.isEmpty()) {
+            newReminderButton.setVisibility(View.GONE);
+        }
+
         recyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
@@ -202,6 +203,7 @@ public class MyListFragment extends ServiceControllerFragment
                 currentReminderHolder.reminder.setLocationName(name);
                 currentReminderHolder.reminder.setLocation(location);
                 currentReminderHolder = null;
+                initializeRecyclerView();
             }
         });
 
@@ -235,7 +237,7 @@ public class MyListFragment extends ServiceControllerFragment
             public void onClick(DialogInterface dialogInterface, int i) {
                 newText = inputField.getText().toString();
                 currentHolder.reminder.setText(newText);
-                // update
+                initializeRecyclerView();
             }
         });
 
