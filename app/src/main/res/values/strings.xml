@@ -8,4 +8,6 @@
 
     <string name="confirmation_dialog_title">Create reminder</string>
     <string name="confirmation_dialog_new_place">Confirm change</string>
+
+    <string name="new_reminder_button_string">Add a new reminder!</string>
 </resources>

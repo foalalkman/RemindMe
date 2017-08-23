@@ -34,7 +34,9 @@ import java.io.InputStreamReader;
  * the LocationUpdateService and push notifications.
  */
 public class AppActivity extends AppCompatActivity
-        implements NewReminderFragment.ReminderCreator, ServiceControllerFragment.ServiceController {
+        implements NewReminderFragment.ReminderCreator,
+                    ServiceControllerFragment.ServiceController,
+                    MyListFragment.NewReminderFragmentLauncher {
 
     private static final String FILENAME = "remindme_data";
     public static final String LOCATION_UPDATE = "location update";
@@ -93,14 +95,8 @@ public class AppActivity extends AppCompatActivity
             if (!data.isEmpty()) {
                 store.deSerialize(data);
             }
-//            String data = loadData();
-//            if (!data.isEmpty()) {
-//                Toast.makeText(this, "Not empty", Toast.LENGTH_SHORT).show();
-//                store.deSerialize(data);
-//            } else {
-//                Toast.makeText(this, "empty", Toast.LENGTH_SHORT).show();
-//            }
-            currentFragment = new MyListFragment();
+
+            launchListFragment();
         }
     }
 
@@ -211,7 +207,8 @@ public class AppActivity extends AppCompatActivity
     /**
      * Creates a NewReminderFragment and starts a transaction with it.
      */
-    private void launchNewReminderFragment() {
+    @Override
+    public void launchNewReminderFragment() {
         Fragment fragment = new NewReminderFragment();
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();

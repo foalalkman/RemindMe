@@ -160,7 +160,7 @@ public class Store implements Parcelable {
      */
     public void deSerialize(String input) {
 
-        String[] rows = input.split("-");
+        String[] rows = input.split("_");
         Location location;
 
         for (int i = 0; i < rows.length; i++) {
@@ -168,7 +168,6 @@ public class Store implements Parcelable {
             location = new Location("");
             location.setLatitude(Double.parseDouble(cols[0]));
             location.setLongitude(Double.parseDouble(cols[1]));
-
 
             reminders.add(new Reminder(location, cols[2], cols[3], Integer.parseInt(cols[4])));
         }

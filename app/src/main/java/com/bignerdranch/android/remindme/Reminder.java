@@ -145,6 +145,6 @@ public class Reminder implements Parcelable {
         String lat = location.getLatitude() + "";
         String lon = location.getLongitude() + "";
 
-        return lat + "," + lon + "," + text + "," + locationName + "," + radius + '-';
+        return lat + "," + lon + "," + text + "," + locationName + "," + radius + '_';
     }
 }

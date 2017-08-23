@@ -11,6 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e634bed-86af-42d9-91b4-5082dfd337cf" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-21-14-49-21-187.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-21-14-50-18-356.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-21-14-58-39-198.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-21-15-02-01-383.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-21-15-05-00-447.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-15-01-23-439.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-15-12-36-658.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-15-14-06-826.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-15-24-29-434.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-15-31-39-800.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-15-34-13-009.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-15-36-31-827.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-22-05-11-741.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-08-22-22-07-23-780.rawproto" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -18,8 +32,23 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-26.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-26.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_activity_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_activity_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_fragment_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_fragment_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_recyclerview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_recyclerview.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/reminder_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/reminder_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/action_bar.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/action_bar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="RemindMe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,216 +79,120 @@
     <favorites_list name="RemindMe" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57608694">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="AppActivity.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="193">
-                  <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="docComment;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#onCreate#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#initializeState#0;class#AppActivity#0" expanded="false" />
-                    <element signature="e#3407#3446#0" expanded="false" />
-                    <element signature="docComment;method#onSaveInstanceState#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#onOptionsItemSelected#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#onOptionsItemSelected#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#launchNewReminderFragment#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#launchListFragment#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#onDestroy#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#createReminder#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#createReminder#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#serviceHasStopped#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#serviceHasStopped#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#removeReminder#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#removeReminder#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#createNotification#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#createNotification#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#serviceControl#0;class#AppActivity#0" expanded="false" />
-                    <element signature="docComment;method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
-                    <element signature="method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
-                    <marker date="1503432437000" expanded="false" signature="6745:6827" ph="/**...*/" />
-                    <marker date="1503432437000" expanded="false" signature="7149:7245" ph="/**...*/" />
-                    <marker date="1503432437000" expanded="false" signature="7871:8037" ph="/**...*/" />
-                    <marker date="1503432437000" expanded="false" signature="11294:11492" ph="/**...*/" />
-                    <marker date="1503432437000" expanded="false" signature="11783:11878" ph="/**...*/" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Store.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="160" column="27" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="27" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="docComment;method#Store#1;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#add#0;class#Store#0" expanded="false" />
-                    <element signature="method#add#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#getReminders#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#getIndex#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#isNear#0;class#Store#0" expanded="false" />
-                    <element signature="method#isNear#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#isEmpty#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#remove#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#describeContents#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#writeToParcel#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;field#CREATOR#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#serialize#0;class#Store#0" expanded="false" />
-                    <element signature="method#serialize#0;class#Store#0" expanded="false" />
-                    <element signature="docComment;method#deSerialize#0;class#Store#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CurrentLocationService.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/CurrentLocationService.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-                  <folding>
-                    <element signature="docComment;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;method#onCreate#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="method#onCreate#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;method#onStartCommand#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="method#onStartCommand#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;method#onBind#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;method#onLocationChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="method#onLocationChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;method#onProviderEnabled#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;method#onProviderDisabled#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-                    <element signature="docComment;method#onStatusChanged#0;class#MyLocationListener#0;class#CurrentLocationService#0" expanded="false" />
-                    <marker date="1503319043000" expanded="false" signature="2134:2221" ph="/**...*/" />
-                    <marker date="1503319043000" expanded="false" signature="2264:2453" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MyListFragment.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-                  <folding>
-                    <element signature="docComment;method#onCreate#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="docComment;method#initializeRecyclerView#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#initializeRecyclerView#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="docComment;method#onSaveInstanceState#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#onSaveInstanceState#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="docComment;method#onActivityCreated#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#onActivityCreated#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="docComment;method#onDestroy#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#onDestroy#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="docComment;method#pickNewPlace#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#pickNewPlace#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="docComment;method#showConfirmationDialog#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#showConfirmationDialog#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="e#5545#5583#0" expanded="true" />
-                    <element signature="docComment;method#editText#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#editText#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="e#7132#7163#0" expanded="true" />
-                    <element signature="docComment;method#notifyActivity#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="docComment;method#onActivityResult#0;class#MyListFragment#0" expanded="false" />
-                    <element signature="method#onActivityResult#0;class#MyListFragment#0" expanded="false" />
-                    <marker date="1503316694000" expanded="false" signature="954:1213" ph="/**...*/" />
-                    <marker date="1503316694000" expanded="false" signature="1931:2100" ph="{...}" />
-                    <marker date="1503316694000" expanded="false" signature="2106:2411" ph="/**...*/" />
-                    <marker date="1503316694000" expanded="false" signature="2528:2744" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MyRecyclerAdapter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyRecyclerAdapter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="444">
-                  <caret line="136" column="57" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
-                  <folding>
-                    <element signature="docComment;method#onCreateViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="method#onCreateViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="docComment;method#onBindViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="method#onBindViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="docComment;method#setButtonListener#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="method#setButtonListener#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="docComment;method#getItemCount#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="docComment;class#ReminderHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <element signature="class#ReminderHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-                    <marker date="1503317500000" expanded="false" signature="433:747" ph="/**...*/" />
-                    <marker date="1503317500000" expanded="false" signature="1132:1246" ph="/**...*/" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="NewReminderFragment.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="docComment;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;class#ReminderCreator#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="class#ReminderCreator#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#onAttach#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="method#onAttach#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#onCreate#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#onCreateView#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="method#onCreateView#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#launchPlacePicker#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="method#launchPlacePicker#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#showInputDialog#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="method#showInputDialog#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#onActivityResult#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="method#onActivityResult#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#showConfirmationDialog#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="method#showConfirmationDialog#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#buildMessageString#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="docComment;method#onDestroy#0;class#NewReminderFragment#0" expanded="false" />
-                    <element signature="method#onDestroy#0;class#NewReminderFragment#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-              <provider editor-type-id="android-manifest">
-                <state />
-              </provider>
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="gradient.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/gradient.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_activity_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_activity_view.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="38" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_fragment_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_fragment_view.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding>
+                <element signature="e#1148#1165#0" expanded="true" />
+                <element signature="e#1260#1299#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#onCreate#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#locationPermission#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_recyclerview.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_recyclerview.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -2183,7 +2116,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MapPermissionService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/lsunch_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/LaunchActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/search_bar_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/SearchBarFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/map_fragment_view.xml" />
@@ -2192,41 +2124,43 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/ReminderAlertDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/new_reminder_fragment_view.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyPlacePicker.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/map_layout_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewMapFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/action_bar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_activity_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/reminder_view.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_fragment_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_recyclerview.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/reminder_options_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/EditTextFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/SnoozedRemindersService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/BroadCastRecieverConnectedFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/ReceiverControllerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyLocation.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/ServiceControllerFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/CurrentLocationService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/reminder_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_recyclerview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/action_bar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/app_activity_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_fragment_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="79" />
-    <option name="y" value="22" />
+    <option name="x" value="77" />
+    <option name="y" value="100" />
     <option name="width" value="1514" />
     <option name="height" value="977" />
   </component>
@@ -2262,6 +2196,10 @@
               <option name="myItemId" value="RemindMe" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2271,6 +2209,64 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RemindMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RemindMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RemindMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2303,6 +2299,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="remindme" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RemindMe" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2713,7 +2723,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="79" y="22" width="1514" height="977" extended-state="0" />
+    <frame x="77" y="100" width="1514" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2722,9 +2732,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.60162604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4018583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294837" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="43" y="439" width="427" height="460" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2740,11 +2752,9 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="43" y="439" width="427" height="460" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2791,18 +2801,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2859,20 +2862,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/SearchBarFragment.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyMapFragment.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2892,36 +2881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/map_layout_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_activity_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/view/LayoutInflater.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -2936,26 +2895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/action_bar.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/reminder_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/reminder_options_menu.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2967,50 +2906,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/EditTextFragment.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_fragment_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_recyclerview.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/SnoozedRemindersService.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/BroadCastRecieverConnectedFragment.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyLocation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3026,70 +2927,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-          <folding>
-            <element signature="docComment;method#onCreate#0;class#MyListFragment#0" expanded="false" />
-            <element signature="docComment;method#initializeRecyclerView#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#initializeRecyclerView#0;class#MyListFragment#0" expanded="false" />
-            <element signature="docComment;method#onSaveInstanceState#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#onSaveInstanceState#0;class#MyListFragment#0" expanded="false" />
-            <element signature="docComment;method#onActivityCreated#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#onActivityCreated#0;class#MyListFragment#0" expanded="false" />
-            <element signature="docComment;method#onDestroy#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#MyListFragment#0" expanded="false" />
-            <element signature="docComment;method#pickNewPlace#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#pickNewPlace#0;class#MyListFragment#0" expanded="false" />
-            <element signature="docComment;method#showConfirmationDialog#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#showConfirmationDialog#0;class#MyListFragment#0" expanded="false" />
-            <element signature="e#5545#5583#0" expanded="true" />
-            <element signature="docComment;method#editText#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#editText#0;class#MyListFragment#0" expanded="false" />
-            <element signature="e#7132#7163#0" expanded="true" />
-            <element signature="docComment;method#notifyActivity#0;class#MyListFragment#0" expanded="false" />
-            <element signature="docComment;method#onActivityResult#0;class#MyListFragment#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#MyListFragment#0" expanded="false" />
-            <marker date="1503316694000" expanded="false" signature="954:1213" ph="/**...*/" />
-            <marker date="1503316694000" expanded="false" signature="1931:2100" ph="{...}" />
-            <marker date="1503316694000" expanded="false" signature="2106:2411" ph="/**...*/" />
-            <marker date="1503316694000" expanded="false" signature="2528:2744" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyRecyclerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="136" column="57" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
-          <folding>
-            <element signature="docComment;method#onCreateViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="method#onCreateViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="docComment;method#onBindViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="method#onBindViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="docComment;method#setButtonListener#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="method#setButtonListener#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="docComment;method#getItemCount#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="docComment;class#ReminderHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <element signature="class#ReminderHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
-            <marker date="1503317500000" expanded="false" signature="433:747" ph="/**...*/" />
-            <marker date="1503317500000" expanded="false" signature="1132:1246" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/NewReminderFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+        <state relative-caret-position="168">
+          <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="60" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#NewReminderFragment#0" expanded="false" />
             <element signature="docComment;class#ReminderCreator#0;class#NewReminderFragment#0" expanded="false" />
-            <element signature="class#ReminderCreator#0;class#NewReminderFragment#0" expanded="false" />
             <element signature="docComment;method#onAttach#0;class#NewReminderFragment#0" expanded="false" />
-            <element signature="method#onAttach#0;class#NewReminderFragment#0" expanded="false" />
             <element signature="docComment;method#onCreate#0;class#NewReminderFragment#0" expanded="false" />
             <element signature="docComment;method#onCreateView#0;class#NewReminderFragment#0" expanded="false" />
             <element signature="method#onCreateView#0;class#NewReminderFragment#0" expanded="false" />
@@ -3108,44 +2954,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="148" column="5" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Reminder#0" expanded="false" />
-            <element signature="method#Reminder#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#setLocation#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#setLocationName#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#setText#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#getLocationName#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#getText#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#isNear#0;class#Reminder#0" expanded="false" />
-            <element signature="docComment;method#serialize#0;class#Reminder#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#locationPermission#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/CurrentLocationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="-195">
           <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
           <folding>
             <element signature="docComment;class#CurrentLocationService#0" expanded="false" />
@@ -3168,8 +2979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Store.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="160" column="27" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="27" />
+        <state relative-caret-position="1215">
+          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#Store#1;class#Store#0" expanded="false" />
@@ -3191,22 +3002,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/Reminder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Reminder#0" expanded="false" />
+            <element signature="method#Reminder#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#setLocation#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#setLocationName#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#setText#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#getLocationName#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#getText#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#isNear#0;class#Reminder#0" expanded="false" />
+            <element signature="docComment;method#serialize#0;class#Reminder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#onCreateViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
+            <element signature="method#onCreateViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
+            <element signature="docComment;method#onBindViewHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
+            <element signature="docComment;method#setButtonListener#0;class#MyRecyclerAdapter#0" expanded="false" />
+            <element signature="method#setButtonListener#0;class#MyRecyclerAdapter#0" expanded="false" />
+            <element signature="docComment;method#getItemCount#0;class#MyRecyclerAdapter#0" expanded="false" />
+            <element signature="docComment;class#ReminderHolder#0;class#MyRecyclerAdapter#0" expanded="false" />
+            <marker date="1503435780000" expanded="false" signature="433:747" ph="/**...*/" />
+            <marker date="1503435780000" expanded="false" signature="1132:1246" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/map_layout_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_recyclerview.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/reminder_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/action_bar.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MyListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="120" column="4" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="4" />
+          <folding>
+            <element signature="class#NewReminderFragmentLauncher#0;class#MyListFragment#0" expanded="false" />
+            <element signature="docComment;method#onCreate#0;class#MyListFragment#0" expanded="false" />
+            <element signature="docComment;method#initializeRecyclerView#0;class#MyListFragment#0" expanded="false" />
+            <element signature="method#initializeRecyclerView#0;class#MyListFragment#0" expanded="false" />
+            <element signature="docComment;method#onSaveInstanceState#0;class#MyListFragment#0" expanded="false" />
+            <element signature="method#onSaveInstanceState#0;class#MyListFragment#0" expanded="false" />
+            <element signature="docComment;method#onActivityCreated#0;class#MyListFragment#0" expanded="false" />
+            <element signature="method#onActivityCreated#0;class#MyListFragment#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MyListFragment#0" expanded="false" />
+            <element signature="method#pickNewPlace#0;class#MyListFragment#0" expanded="false" />
+            <element signature="method#showConfirmationDialog#0;class#MyListFragment#0" expanded="false" />
+            <element signature="e#6643#6681#0" expanded="true" />
+            <element signature="method#editText#0;class#MyListFragment#0" expanded="false" />
+            <element signature="e#8230#8261#0" expanded="true" />
+            <element signature="docComment;method#onActivityResult#0;class#MyListFragment#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#MyListFragment#0" expanded="false" />
+            <marker date="1503438849000" expanded="false" signature="984:1243" ph="/**...*/" />
+            <marker date="1503438849000" expanded="false" signature="1756:1882" ph="/**...*/" />
+            <marker date="1503438849000" expanded="false" signature="2171:2477" ph="{...}" />
+            <marker date="1503438849000" expanded="false" signature="2959:3264" ph="/**...*/" />
+            <marker date="1503438849000" expanded="false" signature="5304:5332" ph="/**...*/" />
+            <marker date="1503438849000" expanded="false" signature="5454:5541" ph="/**...*/" />
+            <marker date="1503438849000" expanded="false" signature="6275:6484" ph="/**...*/" />
+            <marker date="1503438849000" expanded="false" signature="7706:7849" ph="/**...*/" />
+            <marker date="1503438849000" expanded="false" signature="8936:9192" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/AppActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="210" column="10" selection-start-line="210" selection-start-column="10" selection-end-line="210" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onCreate#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#initializeState#0;class#AppActivity#0" expanded="false" />
-            <element signature="e#3407#3446#0" expanded="false" />
             <element signature="docComment;method#onSaveInstanceState#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onOptionsItemSelected#0;class#AppActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#AppActivity#0" expanded="false" />
-            <element signature="method#launchNewReminderFragment#0;class#AppActivity#0" expanded="false" />
             <element signature="method#launchListFragment#0;class#AppActivity#0" expanded="false" />
             <element signature="method#onDestroy#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#createReminder#0;class#AppActivity#0" expanded="false" />
@@ -3220,11 +3179,69 @@
             <element signature="method#serviceControl#0;class#AppActivity#0" expanded="false" />
             <element signature="docComment;method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
             <element signature="method#onReceive#0;class#LocationBroadcastReceiver#0;class#AppActivity#0" expanded="false" />
-            <marker date="1503432437000" expanded="false" signature="6745:6827" ph="/**...*/" />
-            <marker date="1503432437000" expanded="false" signature="7149:7245" ph="/**...*/" />
-            <marker date="1503432437000" expanded="false" signature="7871:8037" ph="/**...*/" />
-            <marker date="1503432437000" expanded="false" signature="11294:11492" ph="/**...*/" />
-            <marker date="1503432437000" expanded="false" signature="11783:11878" ph="/**...*/" />
+            <marker date="1503434163000" expanded="false" signature="6914:7010" ph="/**...*/" />
+            <marker date="1503434163000" expanded="false" signature="7636:7802" ph="/**...*/" />
+            <marker date="1503434163000" expanded="false" signature="11059:11257" ph="/**...*/" />
+            <marker date="1503434163000" expanded="false" signature="11548:11643" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/gradient.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_activity_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_fragment_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <element signature="e#1148#1165#0" expanded="true" />
+            <element signature="e#1260#1299#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bignerdranch/android/remindme/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#launchAppActivity#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#locationPermission#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>

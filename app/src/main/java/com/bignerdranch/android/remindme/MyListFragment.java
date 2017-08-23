@@ -12,6 +12,7 @@ import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -33,7 +34,8 @@ import java.util.ArrayList;
  * The collection is rendered with a RecyclerView. It also handles actions from the RecyclerView,
  * when the user wants to change data in a Reminder.
  */
-public class MyListFragment extends ServiceControllerFragment implements MyRecyclerAdapter.UserInputDelegate {
+public class MyListFragment extends ServiceControllerFragment
+        implements MyRecyclerAdapter.UserInputDelegate, View.OnClickListener {
 
     private ArrayList<Reminder> reminders;
     private View view;
@@ -42,6 +44,31 @@ public class MyListFragment extends ServiceControllerFragment implements MyRecyc
     private RecyclerView.LayoutManager layoutManager;
     private String newText = "";
     private MyRecyclerAdapter.ReminderHolder currentReminderHolder;
+    private NewReminderFragmentLauncher reminderFragmentLauncher;
+
+    /**
+     * Delegate interface so that MyListFragment is able to
+     * launch the NewReminderFragment via AppActivity.
+     */
+    interface NewReminderFragmentLauncher {
+        void launchNewReminderFragment();
+    }
+
+    /**
+     * Makes sure that the calling Activity implements the NewFragmentLauncher interface.
+     * @param a the calling activity.
+     */
+    @Override
+    public void onAttach(Activity a) {
+        super.onAttach(a);
+
+        try {
+            reminderFragmentLauncher = (MyListFragment.NewReminderFragmentLauncher) a;
+
+        } catch (ClassCastException e) {
+            throw new ClassCastException(a.toString() + " does not implement NewReminderFragmentLauncher interface");
+        }
+    }
 
     /**
      * Initial creation of the Fragment. Gets the reminders sent by AppActivity.
@@ -67,6 +94,13 @@ public class MyListFragment extends ServiceControllerFragment implements MyRecyc
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         view = inflater.inflate(R.layout.list_fragment_view, container, false);
+        Button newReminderButton = (Button) view.findViewById(R.id.new_reminder_button);
+        newReminderButton.setOnClickListener(this);
+
+        if (!reminders.isEmpty()) {
+            newReminderButton.setVisibility(View.GONE);
+        }
+
         initializeRecyclerView(view);
 
         return view;
@@ -242,5 +276,10 @@ public class MyListFragment extends ServiceControllerFragment implements MyRecyc
                 showConfirmationDialog(place);
             }
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        reminderFragmentLauncher.launchNewReminderFragment();
     }
 }

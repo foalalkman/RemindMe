@@ -40,7 +40,7 @@ public class NewReminderFragment extends ServiceControllerFragment {
      * to be able to create a new reminder.
      *
      */
-    public interface ReminderCreator {
+    interface ReminderCreator {
         void createReminder(Location l, String n, String s);
     }
 
