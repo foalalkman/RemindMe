@@ -46,7 +46,7 @@ public class ReminderListItemView extends RelativeLayout implements OnMapReadyCa
 
         this.context = context;
         view = LayoutInflater.from(context).inflate(R.layout.reminder_view, this);
-        mapView = (MapView) view.findViewById(R.id.mapView);
+        mapView = (MapView) view.findViewById(R.id.map_view);
         mapView.getMapAsync(this);
         titleView = (TextView) view.findViewById(R.id.reminder_title_view);
         locationView = (TextView) view.findViewById(R.id.reminder_location_view);

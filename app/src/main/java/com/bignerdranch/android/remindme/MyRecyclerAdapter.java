@@ -221,7 +221,7 @@ class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ReminderH
          * It is mandatory to forward the lifecycle events from the hosting fragment
          * to the ReminderListItemView, or else they may get out of sync.
          */
-        public void mapViewListItemViewOnResume() {
+        void mapViewListItemViewOnResume() {
             if (reminderListItemView != null) {
                 reminderListItemView.mapViewOnResume();
             }
