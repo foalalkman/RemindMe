@@ -21,6 +21,10 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.SupportMapFragment;
 
 import java.util.ArrayList;
 
@@ -104,6 +108,11 @@ public class MyListFragment extends ServiceControllerFragment
         return view;
     }
 
+    /**
+     * The newReminderButton will only be visible
+     * if there are no Reminders added. Just to fill out
+     * the empty space and encourage the user to add a reminder.
+     */
     @Override
     public void setButtonVisibility() {
         if (reminders.isEmpty()) {
@@ -119,9 +128,6 @@ public class MyListFragment extends ServiceControllerFragment
      */
     @Override
     public void initializeRecyclerView() {
-
-
-
         recyclerView = (RecyclerView) view.findViewById(R.id.my_recycler_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
@@ -290,6 +296,10 @@ public class MyListFragment extends ServiceControllerFragment
         }
     }
 
+    /**
+     * OnClickListener for the newReminderButton.
+     * @param view the root view.
+     */
     @Override
     public void onClick(View view) {
         reminderFragmentLauncher.launchNewReminderFragment();

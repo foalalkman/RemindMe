@@ -15,4 +15,12 @@
     <string name="menu_item_delete">Delete</string>
 
     <string name="recycler_heading">YOUR REMINDERS:</string>
+
+    <string name="info_permission">Viktigt att ge tillåtelse-text</string>
+    <string name="re_launch_button_text">Re-launch app</string>
+    <string name="finish_button_text">No, finish</string>
+
+
+
+
 </resources>

@@ -20,7 +20,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -314,8 +313,8 @@ public class AppActivity extends AppCompatActivity
                         .setPriority(Notification.PRIORITY_MAX)
                 ;
 
-        Notification notification = notificationBuilder.mNotification;
-        notification.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
+//        Notification notification = notificationBuilder.mNotification;
+//        notification.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
 
         Intent resultIntent = new Intent(AppActivity.this, AppActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

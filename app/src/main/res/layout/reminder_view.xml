@@ -2,7 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp" >
+    android:background="@color/white"
+    xmlns:map="http://schemas.android.com/tools"
+    android:padding="20dp">
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,11 +22,22 @@
         android:layout_below="@id/reminder_title_view" />
 
     <ImageButton
-        android:id="@+id/options_menu_bottom"
+        android:id="@+id/options_menu_button"
         android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/options_grey_24"
         android:layout_alignParentRight="true" />
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@id/reminder_location_view"
+        android:visibility="gone"
+        map:liteMode="true" />
+
+
 
 </RelativeLayout>

@@ -19,7 +19,7 @@ public class Reminder implements Parcelable {
     private String text;
     private String locationName;
     private int radius;
-
+    private boolean mapIsVisible;
 
     public Reminder(Location l, String t, String ln, int r) {
         location = l;
@@ -33,6 +33,14 @@ public class Reminder implements Parcelable {
      */
     public void setLocation(Location newLocation) {
         location = newLocation;
+    }
+
+    public double getLatitude() {
+        return location.getLatitude();
+    }
+
+    public double getLongitude() {
+        return location.getLongitude();
     }
 
     /**
@@ -73,6 +81,14 @@ public class Reminder implements Parcelable {
         return false;
     }
 
+    public void toggleMapVisible() {
+        mapIsVisible = !mapIsVisible;
+    }
+
+    public boolean isMapIsVisible() { return mapIsVisible; }
+
+
+
     /**
      * The private constructor used by the Creator, that assigns the saved values to the
      * new instance.
@@ -83,6 +99,7 @@ public class Reminder implements Parcelable {
         radius = in.readInt();
         text = in.readString();
         locationName = in.readString();
+        mapIsVisible = in.readInt() == 1;
     }
 
     /**
@@ -105,6 +122,7 @@ public class Reminder implements Parcelable {
         parcel.writeInt(radius);
         parcel.writeString(text);
         parcel.writeString(locationName);
+        parcel.writeInt(mapIsVisible ? 1 : 0);
     }
 
     /**

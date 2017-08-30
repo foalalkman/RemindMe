@@ -2,14 +2,13 @@ package com.bignerdranch.android.remindme;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -24,13 +23,13 @@ import java.util.ArrayList;
  * change Place and remove.
  * It communicates with MyListFragment through the UserInputDelegate interface.
  */
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ReminderHolder>
-{
+class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ReminderHolder> {
+
     private ArrayList<Reminder> dataset;
     private Context context;
     private UserInputDelegate delegate;
 
-    public MyRecyclerAdapter(ArrayList<Reminder> reminders, Context c, UserInputDelegate d) {
+    MyRecyclerAdapter(ArrayList<Reminder> reminders, Context c, UserInputDelegate d) {
         dataset = reminders;
         context = c;
         delegate = d;
@@ -56,9 +55,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
      */
     @Override
     public ReminderHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_recyclerview, parent, false);
+        ReminderListItemView mapViewListItemView = new ReminderListItemView(context);
+        mapViewListItemView.mapViewOnCreate(null);
 
-        return new ReminderHolder(v);
+        return new ReminderHolder(mapViewListItemView);
     }
 
     /**
@@ -69,12 +69,16 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
     @Override
     public void onBindViewHolder(ReminderHolder holder, int position) {
         final Reminder reminder = dataset.get(position);
-        holder.reminder = reminder;
-        holder.titleView.setText(reminder.getText());
-        holder.titleView.setTypeface(null, Typeface.BOLD);
-        holder.locationView.setText(reminder.getLocationName());
+        ReminderHolder reminderHolder = (ReminderHolder) holder;
+
+        holder.setReminder(reminder);
+        reminderHolder.mapViewListItemViewOnResume();
+
+        holder.setTitleView(reminder.getText());
+        holder.setLocationView(reminder.getLocationName());
         setButtonListener(holder);
         holder.position = position;
+        holder.setMapVisibility();
     }
 
     /**
@@ -88,10 +92,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         final ReminderHolder reminderHolder = holder;
         final ArrayList<Reminder> reminderArrayList = dataset;
 
-        holder.optionsButton.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener buttonListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popupMenu = new PopupMenu(c, reminderHolder.optionsButton);
+                PopupMenu popupMenu = new PopupMenu(c, reminderHolder.getOptionsButton());
                 popupMenu.inflate(R.menu.reminder_options_menu);
 
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -124,7 +128,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
 
                 popupMenu.show();
             }
-        });
+        };
+
+        holder.setOptionsButton(buttonListener);
     }
 
     /**
@@ -135,25 +141,103 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Re
         return dataset.size();
     }
 
+
     /**
      * ReminderHolder is a customized ViewHolder,
      * that binds the data of the Reminder to a view for being displayed
      * inside the RecyclerView.
      */
-    class ReminderHolder extends RecyclerView.ViewHolder {
+    class ReminderHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView titleView;
-        TextView locationView;
-        ImageButton optionsButton;
+        private ReminderListItemView reminderListItemView;
         Reminder reminder;
         int position;
 
-        ReminderHolder(View view) {
+        ReminderHolder(ReminderListItemView view) {
             super(view);
+            reminderListItemView = view;
+            reminderListItemView.setOnClickListener(this);
+        }
 
-            titleView = (TextView) view.findViewById(R.id.reminder_title_view);
-            locationView = (TextView) view.findViewById(R.id.reminder_location_view);
-            optionsButton = (ImageButton) view.findViewById(R.id.options_menu_button);
+        /**
+         * For the user to fold and unfold the map by pressing on the menu item.
+         * The visible state is held inside the Reminder class.
+         */
+        void setMapVisibility() {
+            if (reminder.isMapIsVisible()) {
+                reminderListItemView.mapView.setVisibility(View.VISIBLE);
+            } else {
+                reminderListItemView.mapView.setVisibility(View.GONE);
+            }
+        }
+
+        /**
+         * Sets the title of the Reminder in the ReminderListItemView's
+         * corresponding TextView.
+         * @param text the title of the reminder.
+         */
+        void setTitleView(String text) {
+            reminderListItemView.setTitleText(text);
+        }
+
+        /**
+         * Sets the name of the location of the Reminder in the ReminderListItemView's
+         * corresponding TextView.
+         * @param text the location name of the reminder.
+         */
+        void setLocationView(String text) {
+            reminderListItemView.setLocationNameText(text);
+        }
+
+        /**
+         * Sets MyRecyclerAdapter's OnClickListener to the optionsButton.
+         * @param listener OnClickListener from the MyRecyclerAdapter.
+         */
+        void setOptionsButton(View.OnClickListener listener) {
+            if (reminderListItemView.getOptionsButton() != null) {
+                reminderListItemView.getOptionsButton().setOnClickListener(listener);
+            }
+        }
+
+        /**
+         * The PopupMenu in optionsButton's OnClickListener needs
+         * this reference to set it's context.
+         * @return the optionsButton.
+         */
+        ImageButton getOptionsButton() {
+            return reminderListItemView.getOptionsButton();
+        }
+
+        /**
+         * Binds the Reminder object to the ReminderListItemView.
+         * @param reminder
+         */
+        void setReminder(Reminder reminder) {
+            this.reminder = reminder;
+            reminderListItemView.setReminder(reminder);
+        }
+
+        /**
+         * It is mandatory to forward the lifecycle events from the hosting fragment
+         * to the ReminderListItemView, or else they may get out of sync.
+         */
+        public void mapViewListItemViewOnResume() {
+            if (reminderListItemView != null) {
+                reminderListItemView.mapViewOnResume();
+            }
+        }
+
+        /**
+         * Toggle the visibility of the map.
+         * @param view the rootView.
+         */
+        @Override
+        public void onClick(View view) {
+            reminderListItemView.mapView.setVisibility(reminder.isMapIsVisible()
+                    ? View.GONE
+                    : View.VISIBLE);
+
+            reminder.toggleMapVisible();
         }
     }
 }
