@@ -100,7 +100,7 @@ public class AppActivity extends AppCompatActivity
     }
 
     /**
-     * Not done yet. Supposed to write the data of all stored Reminders to file.
+     * Writes the data of all stored Reminders to file.
      */
     private void saveData() {
         FileOutputStream outputStream = null;
@@ -120,6 +120,10 @@ public class AppActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Reads the stored data, if any, from file into a String.
+     * @return a string with the data.
+     */
     private String loadData() {
         StringBuilder stringBuilder = new StringBuilder();
         FileInputStream fis;
@@ -293,6 +297,7 @@ public class AppActivity extends AppCompatActivity
     private void removeReminder(int index) {
         if (store != null) {
             store.remove(index);
+            launchListFragment();
         }
     }
 
@@ -312,9 +317,6 @@ public class AppActivity extends AppCompatActivity
                         .setDefaults(Notification.DEFAULT_ALL)
                         .setPriority(Notification.PRIORITY_MAX)
                 ;
-
-//        Notification notification = notificationBuilder.mNotification;
-//        notification.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
 
         Intent resultIntent = new Intent(AppActivity.this, AppActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

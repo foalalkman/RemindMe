@@ -18,7 +18,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AppActivity"/>
+        <activity android:name=".AppActivity">
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </activity>
 
         <meta-data
                 android:name="com.google.android.geo.API_KEY"

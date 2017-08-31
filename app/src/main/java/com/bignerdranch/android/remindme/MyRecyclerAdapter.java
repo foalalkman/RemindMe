@@ -1,8 +1,6 @@
 package com.bignerdranch.android.remindme;
 
 import android.content.Context;
-import android.graphics.Typeface;
-import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
@@ -140,7 +138,6 @@ class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ReminderH
     public int getItemCount() {
         return dataset.size();
     }
-
 
     /**
      * ReminderHolder is a customized ViewHolder,

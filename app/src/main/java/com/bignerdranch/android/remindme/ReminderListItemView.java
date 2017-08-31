@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,7 +22,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
  */
 
 /**
- * Because of the
+ * This View class holds the references to the Views and Widgets that is used to represent
+ * a Reminder and edit the same.
  */
 public class ReminderListItemView extends RelativeLayout implements OnMapReadyCallback {
 

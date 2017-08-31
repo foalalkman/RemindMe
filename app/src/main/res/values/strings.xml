@@ -16,11 +16,9 @@
 
     <string name="recycler_heading">YOUR REMINDERS:</string>
 
-    <string name="info_permission">Viktigt att ge tillåtelse-text</string>
-    <string name="re_launch_button_text">Re-launch app</string>
-    <string name="finish_button_text">No, finish</string>
-
-
-
-
+    <string name="why_permission_heading">Why permission?</string>
+    <string name="permission_explanation">
+        The main purpose of this app is to send notifications
+        with reminders when the user is near a certain place. Tracking the users position is therefore required.
+    </string>
 </resources>
